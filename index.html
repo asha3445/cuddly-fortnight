@@ -11,7 +11,7 @@
 
 <tw-story></tw-story>
 
-<tw-storydata name="cuddly-fortnight" startnode="1" creator="Twine" creator-version="2.3.8" ifid="924EC112-074D-4D75-AB27-00A9112BC778" zoom="0.6" format="Harlowe" format-version="3.1.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Untitled Passage" tags="" position="8.666666666666666,0" size="100,100">The subtle sounds of small paws scrabbling against the stone floor rouse you from your sleep.
+<tw-storydata name="cuddly-fortnight" startnode="1" creator="Twine" creator-version="2.3.8" ifid="924EC112-074D-4D75-AB27-00A9112BC778" zoom="0.6" format="Harlowe" format-version="3.1.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Untitled Passage" tags="" position="0,1.6666666666666667" size="100,100">The subtle sounds of small paws scrabbling against the stone floor rouse you from your sleep.
 
 As you return to the waking world, sounds of screaming, crying, snoring, and rattling chains fill your ears. 
 
@@ -36,7 +36,7 @@ The old man peers at you, but quickly looks back at the rat.
 &quot;Hmm?&quot; He clutches his moldy bread tighter.
 
 [[&quot;Who are you?&quot;]]
-[[&quot;Where are we?&quot;]]</tw-passagedata><tw-passagedata pid="4" name="Look at the girl" tags="" position="6.666666666666668,151.33333333333331" size="100,100">You look at the girl.
+[[&quot;What is this place?&quot;]]</tw-passagedata><tw-passagedata pid="4" name="Look at the girl" tags="" position="6.666666666666668,151.33333333333331" size="100,100">You look at the girl.
 
 She&#39;s young, no older than twenty. The shackles have forced her onto her knees and her head hangs limply against her chest. 
 
@@ -56,7 +56,6 @@ For a moment you catch sight of something shiny tucked beneath her collar. It&#3
 [[Try to wake her]]
 [[Ask the old man about her]] 
 (set: $standing to true)
-(set: $curious to 1)
 (set: $selfless to 1)</tw-passagedata><tw-passagedata pid="6" name="Ask the old man about her" tags="" position="156.33333333333331,270.33333333333337" size="100,100">(if: (history:) contains &quot;See if she&#39;s breathing&quot;) [&quot;Who is she?&quot; you ask the man. 
 
 &quot;Eh?&quot; The old man protectively shields the moldy roll of bread from the rat and looks at you. &quot;None o my business. Sh&#39;ain&#39;t from around here,&quot; the old man sings. &quot;Came in last night. Cryin, barkin, had the whole prison howlin fore she went ta sleep. Had ol&#39; Rhegan bout ready to feed her to the rats,&quot; he sings.
@@ -90,9 +89,8 @@ Two piercing yellow eyes peer between the iron bars in the top of the door.
 
 &quot;Be quiet yurself!&quot; (if: $Rhegans_name is true) [Rhegan] (else:) [the old man] sings.
 
-[[&quot;There&#39;s been a mistake&quot;]]
+[[&quot;There&#39;s been a mistake.&quot;]]
 [[Remain silent]]
-(set: $self_preservation to 1)
 (set: $curious to it +1)]
 
 (else:) [You pull against your chains. You can stretch just far enough to brush the edge of her hair away. You wiggle your fingers - and grab the twine necklace! 
@@ -112,12 +110,11 @@ Two piercing yellow eyes peer between the iron bars in the top of the door.
 
 Item added to inventory!
 
-[[&quot;There&#39;s been a mistake&quot;]]
+[[&quot;There&#39;s been a mistake.&quot;]]
 [[Remain silent]]
 \(set: $standing to false)
-(Set: $copperkey to true)
+(set: $copperkey to 1)
 (set: $womanawake to true)
-(set: $self_preservation to 1)
 (set: $curious to it +1)
 \]</tw-passagedata><tw-passagedata pid="9" name="Try to wake her" tags="" position="186.99999999999997,458.00000000000017" size="100,100">(if: $standing is true) [You reach out to wake her. 
 
@@ -133,7 +130,7 @@ Two piercing yellow eyes peer between the iron bars in the top of the door.
 
 &quot;Be quiet yurself!&quot; (if: $Rhegans_name is true) [Rhegan] (else:) [the old man] sings.
 
-[[&quot;There&#39;s been a mistake&quot;]]
+[[&quot;There&#39;s been a mistake.&quot;]]
 [[Remain silent]]]
 (set: $selfless to it +1)
 
@@ -157,7 +154,7 @@ Two piercing yellow eyes peer between the iron bars in the top of the door.
 
 &quot;Be quiet yurself!&quot; (if: $Rhegans_name is true) [Rhegan] (else:) [the old man] sings.
 
-[[&quot;There&#39;s been a mistake&quot;]]
+[[&quot;There&#39;s been a mistake.&quot;]]
 [[Remain silent]]
 (set: $Rhegans_name_stand to true)
 (set: $standing to false)
@@ -172,7 +169,7 @@ A silent moment passes, where both (if: $Rhegans_name is true OR $Rhegans_name_s
 You give (if: $Rhegans_name is true OR $Rhegans_name_stand is true) [Rhegan] (else:) [the old man] a look harsh enough to make him fall silent, except he doesn&#39;t. &quot;But thas alright. S&#39;cold out there anyhow.&quot;
 
 [[&quot;Where are we?&quot; -&gt; &#39;Where are we?&#39; again...]]
-[[&quot;Can you help me escape?&quot;]]</tw-passagedata><tw-passagedata pid="11" name="Ask to be put on the Chain" tags="" position="420.00000000000006,711.3333333333331" size="100,100">&quot;I would like to be put on the Chain,&quot; you say. A silent moment passes where both (if: $Rhegans_name is true OR $Rhegans_name_stand is true) [Rhegan] (else:) [the old man] and the guard stare at you. Then: &quot;Are you sure about that, human?&quot;
+[[&quot;Can you help me escape?&quot;]]</tw-passagedata><tw-passagedata pid="11" name="Ask to be put on the Chain" tags="" position="410.00000000000006,652.9999999999998" size="100,100">&quot;I would like to be put on the Chain,&quot; you say. A silent moment passes where both (if: $Rhegans_name is true OR $Rhegans_name_stand is true) [Rhegan] (else:) [the old man] and the guard stare at you. Then: &quot;Are you sure about that, human?&quot;
 
 &quot;Ye gone&#39;n done it now,&quot; (if: $Rhegans_name is true OR $Rhegans_name_stand is true) [Rhegan] (else:) [the old man] hums.
 
@@ -210,7 +207,7 @@ Though he&#39;s enraged, you can&#39;t help but think Rhegan&#39;s melodic voice
 &quot;If ye wanted to get out, that was yur chance,&quot; (if: $Rhegansname is true OR $Rhegansnamestand is true) [Rhegan] (else:) [the old man] sings. &quot;But iunno why ye&#39;d wanna do that. Cold out there.&quot;
 
 [[&quot;Where are we?&quot; -&gt; &#39;Where are we?&#39; again...]]
-[[&quot;Can you help me escape?&quot;]]</tw-passagedata><tw-passagedata pid="13" name=" &#39;Where are we?&#39; again..." tags="" position="627.6666666666665,283.0000000000001" size="100,100">(If: (history:) contains &quot;&#39;Where are we?&#39;&quot;) [&quot;Where //are// we?&quot; you ask.
+[[&quot;Can you help me escape?&quot;]]</tw-passagedata><tw-passagedata pid="13" name=" &#39;Where are we?&#39; again..." tags="" position="615.9999999999999,276.3333333333334" size="100,100">(If: (history:) contains &quot;&#39;Where are we?&#39;&quot;) [&quot;Where //are// we?&quot; you ask.
 
 &quot;I told ye, yur in Kha&#39;bad - meanest prison in na Sylvan Snowfields.&quot;] 
 (else:) [&quot;Where are we?&quot; you ask. 
@@ -220,7 +217,8 @@ Though he&#39;s enraged, you can&#39;t help but think Rhegan&#39;s melodic voice
 You&#39;ve gained knowledge! (set: $Sylvan_Snowfield_knowledge_1 to true)
 
 [[&quot;The Sylvan Snowfields?!&quot;]]
-[[&quot;Will you help me escape?&quot;]]</tw-passagedata><tw-passagedata pid="14" name="Try the door" tags="" position="895.9999999999999,175.66666666666663" size="100,100">You look at the door. Deep scratches and spatters of blood coat the old wood from innumerable prisoners kept here before you.
+[[&quot;Will you help me escape?&quot;]]
+(set: $curious to it +1)</tw-passagedata><tw-passagedata pid="14" name="Try the door" tags="" position="895.9999999999999,175.66666666666663" size="100,100">You look at the door. Deep scratches and spatters of blood coat the old wood from innumerable prisoners kept here before you.
 
 You approach the door. There is no knob for you to grab onto, but there are iron bars at the top of the door that could serve as handholds. 
 
@@ -285,7 +283,7 @@ Item added to inventory!
 [[Try the door]]
 (unless: (history:) contains &quot;Release Rhegan&quot;) [[Release Rhegan]]
 
-\(set: $copperkey to true)
+\(set: $copperkey to 1)
 (set: $womanawake to true)
 (set: $self_preservation to it +1)
 (set: $curious to it +1)
@@ -330,13 +328,13 @@ The cold hallway greets you with a barrage of noise - your wooden door had quiet
 
 Goosebumps prickle on your skin. Only now do you realize you&#39;re dressed in old prison rags - whatever garb your old life had afforded you is gone now, most likely confiscated.
 
-You peer around the door. To the left, the hallway stretches on for what feels like an indeterminable distance, marked only by an arched opening with bright torchlight spilling out onto the floor. To the right, the hall also stretches on, but when you listen close enough, the horrid ambience of the hallway seems to be quieter down there. You can&#39;t spot the guard in either direction.
+You peer around the door quickly in both directions, and for the moment the hallway is clear of the guard. A cursory glance in both directions makes it seem like both ends of the hallway stretch on for an indeterminable distance, except to the left is an arched opening with bright torchlight spilling out onto the floor. To the right, the horrid ambience of the hallway seems to be quieter. 
 
 [[Go left]]
 [[Go right]]</tw-passagedata><tw-passagedata pid="22" name="Leave the door" tags="" position="871.6666666666666,339.0000000000001" size="100,100">You step away from the door.
 
 (unless: (history:) contains &quot;Release Rhegan&quot;) [[Release Rhegan]]
-(unless: (history:) contains &quot;Check the girl&quot;) [[Check the girl]]</tw-passagedata><tw-passagedata pid="23" name="Go left" tags="" position="1102.6666666666665,457.33333333333337" size="100,100">You creep further into the hallway and push the cell door closed behind you - no reason to give the guards a red flag just yet. 
+(unless: (history:) contains &quot;Check the girl&quot;) [[Check the girl]]</tw-passagedata><tw-passagedata pid="23" name="Go left" tags="" position="1101,417.33333333333337" size="100,100">You creep further into the hallway and push the cell door closed behind you - no reason to give the guards a red flag just yet. 
 
 Your bare feet slap against the cold stone as you hurry forward. Your escape has not gone unnoticed - each cell you pass gains another set of eyes watching you journey forward. Some creatures react with anger, some with dispair. A new raucous chorus goes up, overshadowing the previous one. 
 
@@ -356,25 +354,25 @@ You may not have long. What are you going to look at first?
 
 [[Examine the weapon rack]]
 [[Examine the box of clothes]]
-[[Examine the shelf]]</tw-passagedata><tw-passagedata pid="24" name="Go right" tags="" position="1092.6666666666665,582.3333333333335" size="100,100">(if: $Prison_Revival is not true)  [You creep further into the hall and close the door behind you - no reason to give the guards a red flag just yet. 
+[[Examine the shelf]]</tw-passagedata><tw-passagedata pid="24" name="Go right" tags="" position="1069.3333333333333,634.0000000000002" size="100,100">(if: $Prison_Revival is not true)  [You creep further into the hall and close the door behind you - no reason to give the guards a red flag just yet. 
 
 Your bare feet slap against the cold stone as you hurry down the hallway. It begins to unnerve you - the silence of it all. You pass a cell with two shimmering green eyes peering through the iron bars, but they duck away when you look at them.
 
 At the end of the hallway sits an old and unbattered wooden door - the way out? You hurry forward, eager to escape. 
 
-One lone cell sits beside the door - one with an iron gate instead of a wooden door. An old hunched woman sits inside. A wild thicket of gray hair obscures most of her upper body, but can&#39;t hide the glow of pulsing purple veins beneath her skin. 
+One lone cell sits beside the door - one with an iron gate instead of a wooden door. An old hunched woman sits inside. A wild thicket of gray hair obscures her face and most of her upper body, but can&#39;t hide the glow of pulsing purple veins beneath her skin. 
 
-You avoid her gaze as you pass, but it does you no good. &quot;Wait!&quot; She hisses. She jumps to her feet and grabs your arm. &quot;You&#39;re an Unfurred, you will not survive the Snowfield,&quot; she says. &quot;But I can help with that.&quot; Her sly smile glints through her hair. 
+You avoid her gaze as you pass, but it does you no good. &quot;Wait!&quot; She hisses. She jumps to her feet and grabs your arm. &quot;You&#39;re an Unfurred. You will not survive the Snowfield,&quot; she says. &quot;But I can help with that.&quot; Giant lips pull back to reveal gleaming teeth beneath her hair.
 
 [[&quot;Unfurred?&quot;-&gt;&quot;Unfurred?&quot;]]
 [[Ignore her]]]
 (if: $Prison_Revival is true) [The world feels a little tilted as you creep further into the hall. You look back - Rhegan grovels beside his rat, right where you left him. You shut the door and continue down the hall in a daze. 
 
-You reach the lone cell at the end of the hallway. The bony hand grabs your arm, the sly smile shines through the hair, and the familiar words enter your ears: &quot;You&#39;re an Unfurred, you will not survive the Snowfield...But I can help with that.&quot;
+You reach the lone cell at the end of the hallway. The bony hand grabs your arm, the sly, gleaming teeth shine beneath her hair, and the familiar words enter your ears: &quot;You&#39;re an Unfurred. You will not survive the Snowfield...But I can help with that.&quot;
 
 [[&quot;Unfurred?&quot;-&gt;&quot;Unfurred?&quot;]]
 (if: $Prison_Revival is true) [[&quot;What just happened?&quot;]]
-[[Ignore her]]]</tw-passagedata><tw-passagedata pid="25" name="Examine the weapon rack" tags="" position="1255.9999999999995,365.6666666666668" size="100,100">You hurry toward the weapon rack. 
+[[Ignore her]]]</tw-passagedata><tw-passagedata pid="25" name="Examine the weapon rack" tags="" position="1232.6666666666663,412.3333333333334" size="100,100">You hurry toward the weapon rack. 
 
 As you journey across the room you realize it isn&#39;t just one rack, but many. One rack boasts a collection of longswords with golden hilts and various jewels inlaid just below the blade; another rack is home to bows of all sizes with intricate carvings covering their surface; another is home to finely-crafted daggers with sharp blades for sharper movement.
 
@@ -382,7 +380,7 @@ As you journey across the room you realize it isn&#39;t just one rack, but many.
 [[Take a dagger]]
 [[Take a bow]]
 (set: $curious to it +1)
-(set: $self_preservation to it +1)</tw-passagedata><tw-passagedata pid="26" name="Examine the box of clothes" tags="" position="1392.6666666666665,379.00000000000017" size="100,100">You journey across the room to the wooden chest of clothes. 
+(set: $self_preservation to it +1)</tw-passagedata><tw-passagedata pid="26" name="Examine the box of clothes" tags="" position="1347.6666666666663,337.3333333333333" size="100,100">You journey across the room to the wooden chest of clothes. 
 
 The chest is filled to the brim, and even a little more so. The pile of clothes is around waist-high, and some tattered robes and hats have fallen to the floor to join the small army of shoes haphazardly strown around the chest.
 
@@ -395,7 +393,7 @@ The cool air of the hallway drifts into the room. You shiver. It&#39;ll be even 
 [[Take the boots]]
 
 (set: $curious to it +1)
-(set: $self_preservation to it +1)</tw-passagedata><tw-passagedata pid="27" name="Examine the shelf" tags="" position="1235.9999999999995,234.00000000000017" size="100,100">You journey across the room to the shelf. 
+(set: $self_preservation to it +1)</tw-passagedata><tw-passagedata pid="27" name="Examine the shelf" tags="" position="1227.6666666666663,210.66666666666683" size="100,100">You journey across the room to the shelf. 
 
 It stretches all the way up to the ceiling, and some shelves are only reachable via a three-legged stool nearby. 
 
@@ -420,9 +418,10 @@ Two piercing yellow eyes peer between the iron bars in the top of the door.
 
 &quot;Be quiet yurself!&quot; Rhegan sings.
 
-[[&quot;There&#39;s been a mistake&quot;]]
+[[&quot;There&#39;s been a mistake.&quot;]]
 [[Remain silent]]
-(set: $Rhegans_name to true)</tw-passagedata><tw-passagedata pid="29" name="&quot;There&#39;s been a mistake&quot;" tags="" position="328.3333333333333,530.3333333333335" size="100,100">(if: $Rhegans_name is true) [&quot;I think there&#39;s been a mistake!&quot; you call out. 
+(set: $Rhegans_name to true)</tw-passagedata><tw-passagedata pid="29" name="&quot;There&#39;s been a mistake.&quot;" tags="" position="328.3333333333333,530.3333333333335" size="100,100">(if: $Rhegans_name is true) [
+[&quot;I think there&#39;s been a mistake!&quot; you call out. 
 
 The two yellow eyes slide over to you. They aren&#39;t human. For a moment there is silence, and then a deep, boisterous laugh bounces around your cell.
 
@@ -434,7 +433,8 @@ You have gained knowledge! (set: $Arun_knowledge_1 to true)(set: $Unfurred_1 to 
 [[Ask to be put on the Chain]]
 [[Say nothing]]
 (set: $self_preservation to it +1)]
-(else-if: $standing OR $Rhegans_name_stand is true) [&quot;I think there&#39;s been a mistake!&quot; you call out. 
+] (else-if: $standing OR $Rhegans_name_stand is true) [
+[&quot;I think there&#39;s been a mistake!&quot; you call out. 
 
 The two yellow eyes slide over to you. They aren&#39;t human. &quot;Sit down, human, or you will be bound as she is.&quot;
 
@@ -446,7 +446,10 @@ You have gained knowledge! (set: $Arun_knowledge_1 to true)(set: $Unfurred_1 to 
 [[Ask to be put on the Chain]]
 [[Say nothing]]
 (set: $self_preservation to it +1)]
-(else-if: $copperkey is true) [&quot;I think there&#39;s been a mistake!&quot; you call out. 
+]
+
+(if: $copperkey is 1) [
+[&quot;I think there&#39;s been a mistake!&quot; you call out. 
 
 The two yellow eyes slide over to you. They aren&#39;t human. &quot;Sit down, human, or you will be bound as she is.&quot;
 
@@ -459,7 +462,8 @@ You have gained knowledge! (set: $Arun_knowledge_1 to true) (set: $Unfurred_1 to
 [[Ask to see King Arun]]
 [[Ask to be put on the Chain]]
 [[Say nothing]]
-(set: $self_preservation to it +1)]</tw-passagedata><tw-passagedata pid="30" name="&quot;How do we escape?&quot;" tags="" position="473.00000000000006,270.00000000000006" size="100,100">&quot;How do we escape?&quot; you ask.
+(set: $self_preservation to it +1)]
+]</tw-passagedata><tw-passagedata pid="30" name="&quot;How do we escape?&quot;" tags="" position="473.00000000000006,270.00000000000006" size="100,100">&quot;How do we escape?&quot; you ask.
 
 &quot;Escape?&quot; Rhegan gives you a bewildered glance. &quot;Why&#39;d you ever wanna do that?&quot;
 
@@ -473,7 +477,7 @@ Two piercing yellow eyes peer between the iron bars in the top of the door.
 
 &quot;Be quiet yurself!&quot; Rhegan sings.
 
-[[&quot;There&#39;s been a mistake&quot;]]
+[[&quot;There&#39;s been a mistake.&quot;]]
 [[Remain silent]]</tw-passagedata><tw-passagedata pid="31" name="&quot;Why are you in here?&quot;" tags="" position="316.3333333333333,262.6666666666666" size="100,100">&quot;Why&#39;re you in here?&quot; you ask. 
 
 A gurgling chuckle escapes Rhegan&#39;s throat. 
@@ -487,8 +491,8 @@ A gurgling chuckle escapes Rhegan&#39;s throat.
 The rat sidles closer to him. His dirty fingernails sink into the bread and he shifts away. 
 
 [[&quot;Why are you singing?&#39;&quot;]]
-(unless: (history:) contains &quot;&#39;Where are we?&#39;&quot;) [[&quot;Where are we?&quot;]]
-(set: $Rhegans_name to true)</tw-passagedata><tw-passagedata pid="33" name="&quot;Where are we?&quot;" tags="" position="414.6666666666666,121.66666666666663" size="100,100">Where are we?&quot; you ask.
+(unless: (history:) contains &quot;What is this place?&quot;) [[&quot;What is this place?&quot;]]
+(set: $Rhegans_name to true)</tw-passagedata><tw-passagedata pid="33" name="&quot;What is this place?&quot;" tags="" position="356.33333333333326,126.66666666666663" size="100,100">Where are we?&quot; you ask.
 
 &quot;Ye find yurself in Kha&#39;bad,&quot; he sings. &quot;Did more&#39;n jus piss off the wrong people, I&#39;d reckon.&quot;
 
@@ -499,8 +503,9 @@ The rat sidles closer to him. His dirty fingernails sink into the bread and he s
 
 [[&quot;Why are you in here?&quot;]]
 [[&quot;How do we escape?&quot;]]
-(unless: (history:) contains &quot;&#39;Who are you?&#39;&quot;) [[&quot;Who are you?&quot;]]
-(set: $Rhegans_name to true)</tw-passagedata><tw-passagedata pid="34" name="&quot;Why are you singing?&#39;&quot;" tags="" position="479.66666666666674,5" size="100,100">&quot;Why are you singing?&quot; you ask. 
+(unless: (history:) contains &quot;\&quot;Who are you?\&quot;&quot;) [[&quot;Who are you?&quot;]]
+(set: $Rhegans_name to true)
+(set: $curious to it +1)</tw-passagedata><tw-passagedata pid="34" name="&quot;Why are you singing?&#39;&quot;" tags="" position="479.66666666666674,5" size="100,100">&quot;Why are you singing?&quot; you ask. 
 
 A gurgling chuckle escapes Rhegan&#39;s throat - so far, the only sound fitting for the old man. 
 
@@ -516,13 +521,13 @@ Two piercing yellow eyes peer between the iron bars in the top of the door.
 
 &quot;Be quiet yurself!&quot; Rhegan sings.
 
-[[&quot;There&#39;s been a mistake&quot;]]
+[[&quot;There&#39;s been a mistake.&quot;]]
 [[Remain silent]]
 {
 (set: $Mubati_knowledge_1 to true)
 (set: $Mubati_knowledge_2 to true)
 (set: $Rhegans_name to true)
-}</tw-passagedata><tw-passagedata pid="35" name="&quot;Can you help me escape?&quot;" tags="" position="672.6666666666665,443.3333333333331" size="100,100">&quot;Can you help me escape?&quot; you ask.
+(set: $curious to it +1)}</tw-passagedata><tw-passagedata pid="35" name="&quot;Can you help me escape?&quot;" tags="" position="672.6666666666665,443.3333333333331" size="100,100">&quot;Can you help me escape?&quot; you ask.
 
 &quot;Heh. You gotta do sumpthin for ol&#39; Rhegan if ye askin him to do sumpthin fer you.&quot;
 
@@ -537,7 +542,7 @@ Rhegan is quiet for a moment. Then - &quot;Get th&#39;Rat King to give m&#39;cro
 
 (if: $Rhegans_name is true OR $Rhegans_name_stand is true) [Rhegan] (else:) [The old man] raises his eyebrows. &quot;Heh. I take it y&#39;ain&#39;t from aroun here. What is it, Ripemarsh? Dulley Plains?&quot;
 
-[[&quot;Revenant&#39;s Keep.&quot;]]</tw-passagedata><tw-passagedata pid="37" name="&quot;Will you help me escape?&quot;" tags="" position="784.6666666666666,8.333333333333343" size="100,100">(if: $Rhegans_attitude_awe is true) [&quot;Will you help me escape?&quot; you ask.
+[[&quot;Revenant&#39;s Keep.&quot;]]</tw-passagedata><tw-passagedata pid="37" name="&quot;Will you help me escape?&quot;" tags="" position="784.6666666666666,6.666666666666676" size="100,100">(if: $Rhegans_attitude_awe is true) [&quot;Will you help me escape?&quot; you ask.
 
 &quot;O&#39;course,&quot; (if: $Rhegans_name is true OR $Rhegans_name_stand is true) [Rhegan] (else:) [the old man] nods his head. He tears off a piece of moldy bread and tosses it on the floor in front of him. 
 
@@ -549,7 +554,7 @@ What had first appeared as a small family of rats now looks like an army - score
 
 They swarm! For a few moments all you can see are the small black bodies crawling over you, smell their musty fur, feel their sharp claws, but then a weight is lifted from your wrists - the cuffs are off!
 
-&quot;Jus make sure you throw in th&#39;good word for me with ye people, aight? (if: $Rhegans_name is true OR $Rhegans_name_stand is true) [&quot; Rhegan] (else:) [My name&#39;s Rhegan.&quot; The old man] keeps his gaze low and his voice soft. 
+&quot;Jus make sure you throw in th&#39;good word for me with ye (if: $Rhegans_name is true OR $Rhegans_name_stand is true)[people, aight?&quot; Rhegan] (else:) [people, aight? My name&#39;s Rhegan.&quot; the old man] keeps his gaze low and his voice soft. 
 
 [[Try the door]]
 [[Release Rhegan]]
@@ -598,7 +603,7 @@ They swarm! For a few moments all you can see are the small black bodies crawlin
 (set: $Rhegans_name_stand to false)
 (set: $standing to false)
 (set: $Rhegans_name to true)
-}</tw-passagedata><tw-passagedata pid="40" name="&quot;Deal.&quot;" tags="" position="824,460.00000000000006" size="100,100">&quot;Deal.&quot; You aren&#39;t sure what you&#39;re agreeing to, but whatever it is, it can&#39;t be that bad. 
+(set: $self_preservation to it +1)}</tw-passagedata><tw-passagedata pid="40" name="&quot;Deal.&quot;" tags="" position="824,460.00000000000006" size="100,100">&quot;Deal.&quot; You aren&#39;t sure what you&#39;re agreeing to, but whatever it is, it can&#39;t be that bad. 
 
 Rhegan grins and tears off a piece of moldy bread, then tosses it on the floor in front of him. 
 
@@ -617,7 +622,7 @@ They swarm! For a few moments all you can see are the small black bodies crawlin
 (set: $Rhegans_name_stand to false)
 (set: $standing to false)
 (set: $Rhegans_name to true)
-}</tw-passagedata><tw-passagedata pid="41" name="Take a longsword" tags="" position="1237.666666666667,540.6666666666667" size="100,100">You walk down to the longswords and take one boasting a shimmering emerald. You give it a valiant swing - it&#39;s well-balanced and light in your hands. 
+(set: $selfless to it +1)}</tw-passagedata><tw-passagedata pid="41" name="Take a longsword" tags="" position="1152.666666666667,527.3333333333336" size="100,100">You walk down to the longswords and take one boasting a shimmering emerald. You give it a valiant swing - it&#39;s well-balanced and light in your hands. 
 
 Nearby is a collection of confiscated scabbards. You reach for one, but  but a clank of armor causes you to freeze. 
 
@@ -638,7 +643,7 @@ He takes a lumbering step forward, his mighty frame filling the doorway. He lowe
 
 
 (set: $held_weapon to true)
-(set: $held_weapon to &quot;longsword&quot;)</tw-passagedata><tw-passagedata pid="42" name="Take a dagger" tags="" position="1222.666666666667,682.3333333333335" size="100,100">You walk down to the daggers and take one, giving it a valiant swing. It&#39;s sharp and quick - good for unexpected encounters.
+(set: $held_weapon to &quot;longsword&quot;)</tw-passagedata><tw-passagedata pid="42" name="Take a dagger" tags="" position="1227.666666666667,644.0000000000001" size="100,100">You walk down to the daggers and take one, giving it a valiant swing. It&#39;s sharp and quick - good for unexpected encounters.
 
 Nearby is a collection of confiscated scabbards. You reach for one, but  but a clank of armor causes you to freeze. 
 
@@ -659,7 +664,7 @@ He takes a lumbering step forward, his mighty frame filling the doorway. He lowe
 
 
 (set: $held_weapon to true)
-(set: $held_weapon to &quot;dagger&quot;)</tw-passagedata><tw-passagedata pid="43" name="Take a bow" tags="" position="1354.3333333333335,632.3333333333337" size="100,100">You walk down to the bows and grab one. The wood boasts an intricate design - most likely elven-made. Giving its string a pull leads you to the same conclusion.
+(set: $held_weapon to &quot;dagger&quot;)</tw-passagedata><tw-passagedata pid="43" name="Take a bow" tags="" position="1354.3333333333335,630.6666666666671" size="100,100">You walk down to the bows and grab one. The wood boasts an intricate design - most likely elven-made. Giving its string a pull leads you to the same conclusion.
 
 
 You&#39;ve obtained an elven bow!
@@ -713,7 +718,7 @@ He takes a lumbering step forward, his mighty frame filling the doorway. He lowe
 [[Quietly finish fastening the brooch]]
 
 
-(set: $held_cloak to &quot;fur cloak&quot;)</tw-passagedata><tw-passagedata pid="45" name="Take the gloves" tags="" position="1524.3333333333335,484.1666666666667" size="100,100">You toss away cloaks and robes until you can find both of the hardy gloves.
+(set: $held_cloak to &quot;fur cloak&quot;)</tw-passagedata><tw-passagedata pid="45" name="Take the gloves" tags="" position="1507.6666666666665,474.1666666666667" size="100,100">You toss away cloaks and robes until you can find both of the hardy gloves.
 
 You slide one on - it&#39;s a little stiff, but well-made and warm. 
 
@@ -888,29 +893,39 @@ When you&#39;re close enough, you take your chance! You bring the longsword up a
 
 (if: (history:) contains &quot;Take a dagger&quot; OR &quot;Take a longsword&quot;) [He shoves you backward with the pole,](else:) [A silent moment passes,] and then his blade is at your throat. &quot;Be grateful for King Arun&#39;s mercy, human, or you would not be standing,&quot; he warns. 
 
-The guard pulls his spear back and studies you for a moment, then returns to the arched opening. &quot;You will need that when you&#39;re on the Chain. Come with me.&quot; 
+The guard pulls his spear back and studies you for a moment, then returns to the arched opening. &quot;You will need that $held_weapon when you&#39;re on the Chain. Come with me.&quot; 
 
 When you don&#39;t move, he continues: &quot;Accidents //can// happen. King Arun would be none the wiser.&quot;
 
 
 [[Follow the guard]]
-(set: $self_preservation to it +1)</tw-passagedata><tw-passagedata pid="58" name="Follow the guard" tags="" position="1757.6666666666663,850.6666666666671" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="59" name="Slip away" tags="" position="685,669.6666666666663" size="100,100">You take a few quiet steps in the opposite direction, and then few more. It doesn&#39;t take long for the guard to notice. &quot;Hey!&quot; He yells. 
+(set: $self_preservation to it +1)</tw-passagedata><tw-passagedata pid="58" name="Follow the guard" tags="" position="1757.6666666666663,850.6666666666671" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="59" name="Slip away" tags="" position="693.3333333333333,659.6666666666664" size="100,100">You take a few quiet steps in the opposite direction, and then few more. It doesn&#39;t take long for the guard to notice. &quot;Hey!&quot; He yells. 
 
 You turn and run, but he&#39;s hot on your tail!
 
 [[Keep going!]]
-(set: $self_preservation to it +1)</tw-passagedata><tw-passagedata pid="60" name="Exit the cell" tags="" position="553.3333333333334,739.6666666666665" size="100,100">The guard stoops once more and exits the cell. Rhegan doesn&#39;t take his eyes off you as you step over his rat and join the guard at the door. 
+(set: $self_preservation to it +1)</tw-passagedata><tw-passagedata pid="60" name="Exit the cell" tags="" position="553.3333333333334,746.3333333333331" size="100,100">The guard stoops once more and exits the cell. Rhegan doesn&#39;t take his eyes off you as you step over his rat and join the guard at the door. 
 
-When you step out into the hall, you look back. Rhegan lies groveling beside what&#39;s left of the rat and gently strokes its tail. With a thundering sigh, the guard swings the door shut. 
+When you step out into the hall, you look back. Rhegan lies groveling beside what&#39;s left of the rat and gently strokes it tail. Before the guard swings the door shut though, you swear the rat twitches, and utters a tiny squeak. 
 
-You look around. 
-
-The hall is lined with cells just like yours, with battered wooden doors leading into each. Some of them sport wild-eyed creatures peering out, bony hands or furry paws desperately trying to claw through the doors, or just simply the sound of crying. 
+You step away, feeling a little sick to your stomach. The hall is lined with cells just like yours, with battered wooden doors leading into each. Some of them sport wild-eyed creatures peering out, bony hands or furry paws desperately trying to claw through the doors, or just simply the sound of crying. 
 
 &quot;Come.&quot; The guard begins lumbering down the hall. You glance the other direction. It&#39;s quieter down there. 
 
 [[Follow the guard -&gt; follow again]]
-[[Slip away]]</tw-passagedata><tw-passagedata pid="61" name="Ignore her" tags="" position="952.6666666666666,567.3333333333335" size="100,100">You pull your arm from the old woman&#39;s grasp and continue forward. &quot;Heh...Don&#39;t say I didn&#39;t warn you.&quot;
+[[Slip away]]</tw-passagedata><tw-passagedata pid="61" name="Ignore her" tags="" position="952.6666666666666,567.3333333333335" size="100,100">(if: (history:) contains &quot;Ignore her&quot;) [You pull your arm from the old woman&#39;s grasp and continue forward. &quot;Heh...Don&#39;t say I didn&#39;t warn you.&quot;
+
+{(if: (history:) contains &quot;Go right&quot;) [You reach the door and put your hands against the wood - it&#39;s colder than ice. You glance back, but the woman shakes her head. Her offer is off the table. 
+
+You suck in a deep breath and push the door open, but the frigid outside air immediately takes it away.] (else-if: (history:) contains &quot;Keep going!&quot;) [You hit the door running, and just before it opens you realize it&#39;s colder than ice. With stinging palms you stumble out into a world covered in white.]}
+
+Violent tremors render your arms and legs useless as your body tries to keep your organs from freezing. You collapse, gasping for breath. Your nose and throat burn from the frigid air, and then your lungs stop moving - turning to ice. 
+
+{(if: (history:) contains &quot;Keep going!&quot;) [&quot;Not again...&quot; you hear the guard mumble as the] (else:) [The]} world fades to black and your tremors subside. 
+
+(if: (history:) contains &quot;Keep going!&quot;) [[Reawaken-&gt;Keep going!]]
+(if: (history:) contains &quot;Go right&quot;) [[Reawaken-&gt;Go right]] 
+(set: $Prison_Revival to true)](else:) [You pull your arm from the old woman&#39;s grasp and continue forward. &quot;Heh...Don&#39;t say I didn&#39;t warn you.&quot;
 
 {(if: (history:) contains &quot;Go right&quot;) [You reach the door and put your hands against the wood - it&#39;s colder than ice. You glance back, but the woman shakes her head. Her offer is off the table. 
 
@@ -923,13 +938,14 @@ Violent tremors render your arms and legs useless as your body tries to keep you
 (if: (history:) contains &quot;Keep going!&quot;) [[Reawaken-&gt;Keep going!]]
 (if: (history:) contains &quot;Go right&quot;) [[Reawaken-&gt;Go right]] 
 (set: $Prison_Revival to true)
-(set: $self_preservation to it +1)</tw-passagedata><tw-passagedata pid="62" name="Keep going!" tags="" position="803.3333333333334,586.3333333333329" size="100,100">(if: $Prison_Revival is not true and (history:) contains &quot;Slip away&quot;) [Your feet loudly slap the cold stone as you rocket past cells full of creatures cheering you on. 
+(set: $self_preservation to it +1)]
+</tw-passagedata><tw-passagedata pid="62" name="Keep going!" tags="" position="811.6666666666666,579.6666666666662" size="100,100">(if: $Prison_Revival is not true and (history:) contains &quot;Slip away&quot;) [Your feet loudly slap the cold stone as you rocket past cells full of creatures cheering you on. 
 
 At the end of the hallway is an old and unbattered wooden door - with sunlight filtering in from underneath. 
 
-Before you can reach it, a bony hand grabs your arm! You look - the hand is connected to an old hunched woman with a wild thicket of gray hair obscuring most of her upper body. Glowing purple veins pulse beneath her skin. 
+Before you can reach it, a bony hand grabs your arm! You look - the hand is connected to an old hunched woman with a wild thicket of gray hair obscuring her face and most of her upper body. Glowing purple veins pulse beneath her skin. 
 
-&quot;You&#39;re an Unfurred, you will not survive the Snowfield,&quot; she says. &quot;I can help with that.&quot; Her sly smile glints through her hair. 
+&quot;You&#39;re an Unfurred. You will not survive the Snowfield,&quot; she says. &quot;I can help with that.&quot; Fleshy lips pull back to reveal a sly smile that glints through her hair. 
 
 You look over your shoulder - the guard isn&#39;t far behind.
 
@@ -941,33 +957,22 @@ A bony hand grabs your arm before you reach it, and the familiar words enter you
 
 [[&quot;Help, then!&quot;-&gt;&quot;Unfurred?&quot;]]
 (if: $Prison_Revival is true) [[&quot;What just happened?&quot;]]
-[[Ignore her]]]</tw-passagedata><tw-passagedata pid="63" name=" follow again" tags="" position="566.6666666666665,877.3333333333337" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="64" name="&quot;Unfurred?&quot;" tags="" position="876.6666666666667,711.333333333333" size="100,100">(if: (history:) contains &quot;Go right&quot;) [&quot;What&#39;s an Unfurred?&quot; you ask (if: $Prison_Revival is true and (history:) contains &quot;Go right&quot;) [hesitantly.] (else:) [, gently reclaiming your arm from the woman.] (if: $Unfurred_1 is true) [&quot;The guard mentioned it too.&quot;] &quot;Heh...(if: $Prison_Revival is true and (history:) contains &quot;Go right&quot;) [you seem confused, dear. //You//] (else:) [//you//] are an Unfurred.&quot; She laughs. &quot;My dear, you are no Beast, you are a human, an Uninitiated, an Ungifted, an Un//furred//. But...&quot; she pauses, then tightly grips your arm again. &quot;You are //not//...at least, not entirely...&quot; she peers up at you. &quot;You have come back...you have seen death as a Beast and awoken from it...Are you a Revenant?&quot;
+[[Ignore her]]]</tw-passagedata><tw-passagedata pid="63" name=" follow again" tags="" position="1510,877.3333333333338" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="64" name="&quot;Unfurred?&quot;" tags="" position="763.3333333333335,827.9999999999997" size="100,100">(if: (history:) contains &quot;Go right&quot;) [&quot;What&#39;s an Unfurred?&quot; you ask (if: $Prison_Revival is true and (history:) contains &quot;Go right&quot;) [hesitantly.] (else:) [, gently reclaiming your arm from the woman.] (if: $Unfurred_1 is true) [&quot;The guard mentioned it too.&quot;] &quot;Heh...(if: $Prison_Revival is true and (history:) contains &quot;Go right&quot;) [you seem confused, dear. //You//] (else:) [//you//] are an Unfurred.&quot; She laughs. &quot;My dear, you are no Beast, you are a human, an Uninitiated, an Ungifted, an Un//furred//. But...&quot; she pauses, then tightly grips your arm again. &quot;You are //not//...at least, not entirely...&quot; You sense her peer at you with unseen eyes. &quot;You have come back...you have seen death as a Beast and awoken from it...Are you a Revenant?&quot;
 
 [[&quot;Uh...?&quot;]]
-[[&quot;Yes.&quot;]]]
-(if: (history:) contains &quot;Keep going!&quot;) [&quot;Do something about the guard, then!&quot; you plead. The woman releases your arm and gives you a wink. &quot;Of course, dear.&quot;
+(set: $curious to it +1)]
+(if: (history:) contains &quot;Keep going!&quot;) [&quot;Do something about the guard, then!&quot; you plead. The woman releases your and raises her hands. &quot;Of course, dear.&quot;
 
 Her arms glow so brightly they make the torches look like small fireflies. She splays her fingers and takes aim at the guard. The light that erupts her from hands causes you to shield your face and look away - and miss whatever it is that causes the guard to yell.
 
-Moments later the hall descends into silence. You uncover your eyes and see the old woman standing with her hands resting on the iron gate and a pleasant smile on her face. 
+Moments later the hall descends into silence. You uncover your eyes and see the old woman standing with her hands resting on the iron gate and her bulbous lips pulled back in what you think is a satisfied grin.
 
 You look over - the guard is completely still, stuck with his spear pointing at you and one leg caught mid-step. A slight purple sheen dances across his fur, holding everything except his darting eyes in place.
 
-&quot;Now, as I was saying, I can help with your Unfurred problem. Let me see...&quot; The old woman grabs your arm again and pulls you closer. She&#39;s quiet for a moment, then mumbles to herself: &quot;You are an Unfurred...you are no Beast, yet...&quot; she peers up at you. &quot;You have come back...you have seen death as a Beast and awoken from it...Are you a Revenant?&quot;
+&quot;Now, as I was saying, I can help with your Unfurred problem. Let me see...&quot; The old woman grabs your arm again and pulls you closer. She&#39;s quiet for a moment, then mumbles to herself: &quot;You are an Unfurred...you are no Beast, yet...&quot; You sense her peer at you with unseen eyes. &quot;You have come back...you have seen death as a Beast and awoken from it...Are you a Revenant?&quot;
 
-[[&quot;Uh...?&quot;]] 
-[[&quot;Yes.&quot;]]]</tw-passagedata><tw-passagedata pid="65" name="&quot;Yes.&quot;" tags="" position="1060,869.6666666666664" size="100,100">&quot;Yes,&quot; you confidently claim.
-
-The woman&#39;s eyes light up. &quot;You are unlike the others indeed! You remember...Arun has not taken your memory! But...&quot; She grips your arm tighter. &quot;The King does not know what he&#39;s done! The Council of Twelve is missing you, dear. The world...&quot; she trails off. &quot;Oh no. Oh no indeed...&quot;
-
-You breathe a sigh of relief when she releases your arm. The woman waddles in circles around her cell mumbling to herself. On her third lap she stops. &quot;Death will not function without you, dear. You need to go home. Revenant&#39;s Keep is waiting for you.&quot;
-
-You stand in silence.
-
-&quot;Ah! But! I can help with that...I can help with much.&quot; She sidles up to you and takes your arm gently. &quot;But you can do something for me as well, yes indeed, yes, undoubtedly...&quot;
-
-[[&quot;What is it?&quot;]]
-[[Kindly refuse]]</tw-passagedata><tw-passagedata pid="66" name="&quot;Uh...?&quot;" tags="" position="910.0000000000002,862.9999999999998" size="100,100">&quot;Uh...?&quot; You shrug.
+[[&quot;Uh...?&quot;]]
+(set: $self_preservation to it +1)]</tw-passagedata><tw-passagedata pid="65" name="&quot;Uh...?&quot;" tags="" position="586.6666666666667,876.3333333333331" size="100,100">&quot;Uh...?&quot; You shrug.
 
 &quot;Ah, of course you don&#39;t remember! Arun took your memory. Curse this prison! Curse Arun!&quot; The woman shouts loudly. &quot;He doesn&#39;t know what he&#39;s done!&quot; You wince as the grip on your arm tightens. &quot;The Council of Twelve is missing you, dear. The world...&quot; she trails off. &quot;Oh no. Oh no indeed...&quot;
 
@@ -978,21 +983,20 @@ You stand in silence.
 &quot;Ah! But! I can help with that...I can help with much.&quot; She sidles up to you and takes your arm gently. &quot;But you can do something for me as well, yes indeed, yes, undoubtedly...&quot;
 
 [[&quot;What is it?&quot;]]
-[[Kindly refuse]]</tw-passagedata><tw-passagedata pid="67" name="&quot;What just happened?&quot;" tags="" position="1050.0000000000002,709.6666666666665" size="100,100">&quot;What just happened?&quot; you ask. (if: (history:) contains &quot;Keep going!&quot;) [You furitively glance at the guard.] 
+[[Kindly refuse]]</tw-passagedata><tw-passagedata pid="66" name="&quot;What just happened?&quot;" tags="" position="918.3333333333335,891.3333333333333" size="100,100">&quot;What just happened?&quot; you ask. (if: (history:) contains &quot;Keep going!&quot;) [You furitively glance at the guard.] 
 
-&quot;You&#39;ve been imprisoned, dear.&quot; She gives you a sympathetic smile, or at least, the parts of her face you //can// see look sympathetic. (if: (history:) contains &quot;Keep going!&quot;) [&quot;One moment.&quot; 
+&quot;You&#39;ve been imprisoned, dear.&quot; She gives you a sympathetic smile, or at least, her giant lips peeling back to show her yellow snaggleteeth //seems// sympathetic. (if: (history:) contains &quot;Keep going!&quot;) [&quot;One moment.&quot; 
 
 Her arms glow so brightly they make the torches look like small fireflies. She splays her fingers and takes aim at the guard. The light that erupts her from hands causes you to shield your face and look away - and miss whatever it is that causes the guard to yell.
 
-Moments later the hall descends into silence. You uncover your eyes and see the old woman standing with her hands resting on the iron gate and a pleasant smile on her face. 
+Moments later the hall descends into silence. You uncover your eyes and see the old woman standing with her hands resting on the iron gate and what seems like a satisfied grin on her face.
 
 You look over - the guard is completely still, stuck with his spear pointing at you and one leg caught mid-step. A slight purple sheen dances across his fur, holding everything except his darting eyes in place.
 
-&quot;Now, as I was saying, you&#39;ve been imprisoned.&quot;] When you don&#39;t respond, her smile fades away. &quot;Unless...&quot; She pauses. (if: (history:) contains &quot;Keep going!&quot;) [She tightly grabs your arm and] (else:) [You feel her grip on your arm tighten, and she] pulls you closer to her cell. &quot;No, no...it&#39;s not //that// you&#39;re asking about, is it? You&#39;re an Unfurred...but you are //not//...at least, not entirely.&quot; Her gaze slowly slides up to meet yours. &quot;Are you a Revenant?&quot;
+&quot;Now, as I was saying, you&#39;ve been imprisoned.&quot;] When you don&#39;t respond, her smile fades away. &quot;Unless...&quot; She pauses. (if: (history:) contains &quot;Keep going!&quot;) [She tightly grabs your arm and] (else:) [You feel her grip on your arm tighten, and she] pulls you closer to her cell. &quot;No, no...it&#39;s not //that// you&#39;re asking about, is it? You&#39;re an Unfurred...but you are //not//...at least, not entirely.&quot; You sense her unseen eyes slowly slide up to meet yours. &quot;Are you a Revenant?&quot;
 
 [[&quot;Uh...?&quot;]]
-[[&quot;Yes.&quot;]]
-(if: $player_knowledge_1 is true) [[&quot;I&#39;m from Revenant&#39;s Keep.&quot;]]</tw-passagedata><tw-passagedata pid="68" name="&quot;I&#39;m from Revenant&#39;s Keep.&quot;" tags="" position="1196.6666666666667,847.9999999999998" size="100,100">&quot;I&#39;m from Revenant&#39;s Keep,&quot; you say.
+(if: $player_knowledge_1 is true) [[&quot;I&#39;m from Revenant&#39;s Keep.&quot;]]</tw-passagedata><tw-passagedata pid="67" name="&quot;I&#39;m from Revenant&#39;s Keep.&quot;" tags="" position="593.3333333333333,994.6666666666664" size="100,100">&quot;I&#39;m from Revenant&#39;s Keep,&quot; you say.
 
 &quot;Oh ho! //This// is exciting!&quot; She squeezes your arm, but then quickly releases you. &quot;Your kind is very powerful, dear. But...&quot; She grips your arm again, tighter. &quot;The King does not know what he&#39;s done! The Council of Twelve is missing you, dear. The world...&quot; she trails off. &quot;Oh no. Oh no indeed...&quot;
 
@@ -1003,7 +1007,7 @@ You stand in silence.
 &quot;Ah! But! I can help with that...I can help with much.&quot; She sidles up to you and takes your arm gently. &quot;But you can do something for me as well, yes indeed, yes, undoubtedly...&quot;
 
 [[&quot;What is it?&quot;]]
-[[Kindly refuse]]</tw-passagedata><tw-passagedata pid="69" name="&quot;What is it?&quot;" tags="" position="985,1019.6666666666664" size="100,100">&quot;What is it?&quot; you ask.
+[[Kindly refuse]]</tw-passagedata><tw-passagedata pid="68" name="&quot;What is it?&quot;" tags="" position="450.00000000000006,817.9999999999997" size="100,100">&quot;What is it?&quot; you ask.
 
 The woman grins, baring her yellow snaggleteeth. &quot;I need you to find my sisters on the outside...They live on the edge of Silva, out of Arun&#39;s reach. He&#39;d have them too if he could...&quot; she mutters. &quot;But you&#39;ll never make it, not like this...no...&quot;
 
@@ -1013,13 +1017,212 @@ She pulls you closer. Her palm is cold on your cheek, and her breath is intoxica
 
 Your mind swirls, thoughts play out as she sifts through them. &quot;Yes...yes...you will receive a form.&quot;
 
-Her grip on your arm tightens, painfully so. Too entranced to pull away, you stand complacently as her fingernails dig into your skin. You can open your eyes just enough to see blood leaking from your arm - but it&#39;s purple. 
+Her grip on your arm tightens, painfully so. Too entranced to pull away, you stand complacently as her fingernails dig into your skin. You can open your eyes just enough to see blood leaking from your arm - it&#39;s purple. 
 
-(if: $selfless &gt; $self_preservation and $curious) [&quot;You are the Caribou, Revenant, you have been selfless, you have cared for others.]
-(if: $self_preservation &gt; $selfless and $curious) [&quot;You are the Wolf, Revenant, you have protected yourself, you have spoken out.]
-(if: $curious &gt; $self_preservation and $selfless) [&quot;You are the Rabbit, Revenant, you have been curious, you have investigated.] This is the Snowfield&#39;s gift to you.&quot;
-(set: $selfless to it +1)
-(set: $curious to it +1)</tw-passagedata><tw-passagedata pid="70" name="Kindly refuse" tags="" position="1175,1009.6666666666664" size="100,100">(set: $self_preservation to it +1)</tw-passagedata></tw-storydata>
+(if: $selfless &gt; $self_preservation and $curious) [&quot;You are the Caribou, Revenant, you have been selfless, you have cared for others.](if: $self_preservation &gt; $selfless and $curious) [&quot;You are the Wolf, Revenant, you have protected yourself, you have spoken out.] (if: $curious &gt; $self_preservation and $selfless) [&quot;You are the Hare, Revenant, you have been curious, you have investigated.] This is the Snowfield&#39;s gift to you.&quot;
+
+She releases your arm and steps back. It takes a moment for your eyes to regain focus and your lungs to be rid of her breath.
+
+&quot;Welcome back.&quot;
+
+You study your hands. They look the same, but something feels...different.
+
+(if: $selfless &gt; $self_preservation and $curious)[[&quot;What did you do to me?&quot;-&gt;Caribou]](if: $self_preservation &gt; $selfless and $curious)[[&quot;What did you do to me?&quot;-&gt;Wolf]](if: $curious &gt; $self_preservation and $selfless)[[&quot;What did you do to me?&quot;-&gt;Rabbit]]
+(set: $curious to it +1)</tw-passagedata><tw-passagedata pid="69" name="Kindly refuse" tags="" position="398.3333333333334,937.9999999999997" size="100,100">&quot;I&#39;m sorry.&quot; You extricate your arm from the woman&#39;s grasp. &quot;I have-&quot;(set: $self_preservation to it +2)
+
+&quot;Better things to do?&quot; She interrupts you with a cackle. &quot;My dear, what I&#39;m asking of you, you will do anyway. &quot;My sisters live on the edge of Silva, out of Arun&#39;s reach. They will help you cross the Snowfield.&quot;
+
+She pulls you closer. Her palm is cold on your cheek, and her breath is intoxicating. The world feels blurrier. 
+
+&quot;You&#39;ll never make it like this. No, you need a form, Revenant...&quot; she whispers. &quot;What have you done? What consequences have your choices wrought?&quot;
+
+Your mind swirls, thoughts play out as she sifts through them. &quot;Yes...yes...you will receive a form.&quot;
+
+Her grip on your arm tightens, painfully so. Too entranced to pull away, you stand complacently as her fingernails dig into your skin. You can open your eyes just enough to see blood leaking from your arm - it&#39;s purple. 
+
+(if: $selfless is (max: $selfless, $self_preservation, $curious)) [&quot;You are the Caribou, Revenant, you have been selfless, you have cared for others.](else-if: $self_preservation is (max: $selfless, $self_preservation, $curious)) [&quot;You are the Wolf, Revenant, you have protected yourself, you have spoken out.] (else-if: $curious is (max: $selfless, $self_preservation, $curious)) [&quot;You are the Hare, Revenant, you have been curious, you have investigated.] This is the Snowfield&#39;s gift to you.&quot;
+
+She releases your arm and steps back. It takes a moment for your eyes to regain focus and your lungs to be rid of her breath.
+
+&quot;Welcome back.&quot;
+
+You study your hands. They look the same, but something feels...different.
+
+{(if: $selfless is (max: $selfless, $self_preservation, $curious)) [
+[[&quot;What did you do to me?&quot;-&gt;Caribou]]
+] (else-if: $self_preservation is (max: $selfless, $self_preservation, $curious)) [
+[[&quot;What did you do to me?&quot;-&gt;Wolf]]
+] (else-if: $curious is (max: $selfless, $self_preservation, $curious))[
+[[&quot;What did you do to me?&quot;-&gt;Rabbit]]
+]
+}</tw-passagedata><tw-passagedata pid="70" name="Caribou" tags="" position="290,736.3333333333331" size="100,100">&quot;What did you do to me?&quot; you ask.
+
+&quot;What needed to be done,&quot; she grumbles. &quot;Arun eats memories - he takes them from his prisoners. For you though, your memories are your powers. If you don&#39;t remember how it feels to have the Beast blood then you are no threat to Arun. My sisters and I can fix that, though.&quot;
+
+The woman pulls her hair away from her face and grins. You recoil - though she appears mostly human, her head is that of a horse. Her horizontal pupils quiver as she takes in your reaction. She laughs heartily, then continues: &quot;My sisters and I are the only ones in the Snowfield to claim the Nuqu Beast Blood - so you will have no trouble finding them. When you decide to cross the Snowfields, seek out Hannah. The Form she grants you will be most useful.&quot; The woman waves you away. &quot;Now, call forth your Form and leave this (if: (history:) contains &quot;Slip away&quot;) [place, before my magic wears off on our guard, here.&quot;] (else:) [place.&quot;]
+
+You watch the old woman step to the back of her cell. She would almost be hidden in the darkness if it wasn&#39;t for her glowing veins. 
+
+[[Assume the Form of the caribou-&gt;transform]]
+
+(set: $caribou to true)
+(set: $held_form to &quot;Caia&quot;)
+</tw-passagedata><tw-passagedata pid="71" name="Wolf" tags="" position="166.6666666666668,642.9999999999998" size="100,100">&quot;What did you do to me?&quot; you ask.
+
+&quot;What needed to be done,&quot; she grumbles. &quot;Arun eats memories - he takes them from his prisoners. For you though, your memories are your powers. If you don&#39;t remember how it feels to have the Beast blood then you are no threat to Arun. My sisters and I can fix that, though.&quot;
+
+The woman pulls her hair away from her face and grins. You recoil - though she appears mostly human, her head is that of a horse. Her horizontal pupils quiver as she takes in your reaction. She laughs heartily, then continues: &quot;My sisters and I are the only ones in the Snowfield to claim the Nuqu Beast Blood - so you will have no trouble finding them. When you decide to cross the Snowfields, seek out Hannah. The Form she grants you will be most useful.&quot; The woman waves you away. &quot;Now, call forth your Form and leave this (if: (history:) contains &quot;Slip away&quot;) [place, before my magic wears off on our guard, here.&quot;] (else:) [place.&quot;]
+
+You watch the old woman step to the back of her cell. She would almost be hidden in the darkness if it wasn&#39;t for her glowing veins. 
+
+[[Assume the Form of the wolf-&gt;transform]]
+
+(set: $wolf to true)
+(set: $held_form to &quot;Holven&quot;)
+</tw-passagedata><tw-passagedata pid="72" name="Rabbit" tags="" position="20,631.3333333333333" size="100,100">&quot;What did you do to me?&quot; you ask.
+
+&quot;What needed to be done,&quot; she grumbles. &quot;Arun eats memories - he takes them from his prisoners. For you though, your memories are your powers. If you don&#39;t remember how it feels to have the Beast blood then you are no threat to Arun. My sisters and I can fix that, though.&quot;
+
+The woman pulls her hair away from her face and grins. You recoil - though she appears mostly human, her head is that of a horse. Her horizontal pupils quiver as she takes in your reaction. She laughs heartily, then continues: &quot;My sisters and I are the only ones in the Snowfield to claim the Nuqu Beast Blood - so you will have no trouble finding them. When you decide to cross the Snowfields, seek out Hannah. The Form she grants you will be most useful.&quot; The woman waves you away. &quot;Now, call forth your Form and leave this (if: (history:) contains &quot;Slip away&quot;) [place, before my magic wears off on our guard, here.&quot;] (else:) [place.&quot;]
+
+You watch the old woman step to the back of her cell. She would almost be hidden in the darkness if it wasn&#39;t for her glowing veins. 
+
+[[Assume the Form of the hare-&gt;transform]]
+
+(set: $rabbit to true)
+(set: $held_form to &quot;Lepus&quot;)
+</tw-passagedata><tw-passagedata pid="73" name="transform" tags="" position="40.00000000000007,784.6666666666664" size="100,100">You close your eyes as a shudder racks your body. You only notice minor sensations - a faint itch atop your skin, some pressure on your head - and then everything quickly returns to normal. 
+
+(if: $held_form is &quot;Holven&quot;) [You open your eyes and study your hands. They&#39;re still //shaped// like your hands, but now they&#39;re covered in thick grey fur; so too are your arms, legs, and body. Your legs are misshapen like a dog&#39;s, and your feet are now paws. You feel your face - what was once a nose and mouth is now a muzzle with thin lips and a wet nose. 
+
+The woman chuckles in her cell. Your ears twitch toward the sound, and moments later you can smell her intoxicating breath again. You take another sniff of the air. New scents present themselves to you: fresh blood, rat excrement, and savory food being prepared somewhere in the prison.](if: $held_form is &quot;Lepus&quot;) [You open your eyes and study your hands. They&#39;re still //shaped// like your hands, but now they&#39;re covered in soft white fur; so too are your arms, legs, and body. Your legs are misshapen like a rabbit&#39;s, and your feet are incredibly long. You touch your face - what was once a nose and mouth is now a tiny muzzle with thin lips and a button nose. 
+
+The woman in her cell brushes her hair aside and you can hear it clearly. All throughout the prison the sounds seem louder, but now you can hear even the most minute sounds: dripping blood, scurrying rats, and the clanking of silverware against plates somewhere deep in the prison.](if: $held_form is &quot;Caia&quot;) [You open your eyes and check yourself over. Coarse fur covers your arms, legs, and body, your legs are misshapen like a deer&#39;s, and your feet are now hard hooves. You feel your face - what was once a nose and mouth is now a muzzle, and regal antlers sit atop your head. 
+
+You blink. The dimly-lit hallway looks brighter now, and one cursory glance at the old woman&#39;s cell reveals her stooped over a small pile of hay near the back wall.]
+
+You step toward the door, a little overwhelmed but not surprised. Once upon a time this Beast Blood flowed through your veins and you existed as a $held_form - a person with the blood of a (if: $held_form is &quot;Caia&quot;) [caribou.] (if: $held_form is &quot;Holven&quot;) [wolf.] (if: $held_form is &quot;Lepus&quot;) [rabbit.]
+
+You place your hands against the door, preparing to leave. 
+
+[[Exit the prison]]</tw-passagedata><tw-passagedata pid="74" name="Exit the prison" tags="" position="20.000000000000036,907.9999999999998" size="100,100">You push the door open and step out into freshly fallen snow of the Sylvan Snowfields.
+
+[[The kingdom of Ice and Bears.]]</tw-passagedata><tw-passagedata pid="75" name="The kingdom of Ice and Bears." tags="" position="146.6666666666667,852.9999999999998" size="100,100">A forested land haunted by the perpetual winter of the North. King Arun sits upon the throne - a fair and just ruler of Silva.
+
+[[But all is not as it seems.]]</tw-passagedata><tw-passagedata pid="76" name="But all is not as it seems." tags="" position="263.33333333333337,889.6666666666664" size="100,100">You have seen death as many Beasts and have reawaken each time to rejoin the world of the living. This has granted you the title of Revenant and a seat on the Council of Twelve, the judges and jurors of life and death. Each of you holds dominion over the Beasts whose form you once were.
+
+[[Your power lies in your memories.]]</tw-passagedata><tw-passagedata pid="77" name="Your power lies in your memories." tags="" position="143.33333333333337,977.9999999999999" size="100,100">Memories of previous lives, which dictate the Forms a Revenant can take and judge. You&#39;ve awoken here with no memories though, and can no longer remember your previous lives or Forms. 
+
+[[Without you, the Beasts you once were can escape judgement and death.]]</tw-passagedata><tw-passagedata pid="78" name="Without you, the Beasts you once were can escape judgement and death." tags="" position="25.00000000000003,1078" size="100,100">To restore the balance, you must regain the forms you once held and return to your home in Revenant&#39;s Keep, else give rise to immortal beings who will upset the cycle of life and death.
+
+[[So you exit the prison and begin your journey in the Sylvan Snowfields.]]</tw-passagedata><tw-passagedata pid="79" name="So you exit the prison and begin your journey in the Sylvan Snowfields." tags="" position="155.00000000000003,1089.6666666666665" size="100,100">You emerge into the Prison Yard - an area walled in stone and covered with freshly fallen snow. 
+
+Glacial winds cut through the Yard, forcing most Beasts to huddle beneath umbrella-like structures with melted snow underneath. Only those with the most hardy Forms seem to tolerate the wind, but even they can&#39;t stay unsheltered for long. 
+
+Underneath the nearest - and smallest - structure is a group of hares and ground squirrels chatering quickly among themselves. Just beyond them is a lone caribou helping an injured fox limp toward another structure. Further on is a wolf, leering at them. You see another wolf approach, slip something to him, and then walk away. 
+
+Spaced around the yard are more guards - armored bears and snow leopards. They watch each prisoner closely, but disregard the wolves. 
+
+You&#39;ve attracted the attention of a snow leopard. He shifts, turning his armor-clad head in your direction. You&#39;ve got to make a move before he suspects anything. 
+
+(if: $held_form is &quot;Caia&quot;) [As a caribou, you have a strong tolerance for the cold and can make it most of the way across the Yard.
+
+[[Join the rabbits and ground squirrels]]
+[[Join the caribou]]
+[[Join the wolf]]](if: $held_form is &quot;Lepus&quot;) [As a hare, you can move quickly and cover more ground before succumbing to the cold.
+
+[[Join the rabbits and ground squirrels]] 
+[[Join the caribou]]](if: $held_form is &quot;Holven&quot;) [As a wolf, you can move short distances before succumbing to the cold.
+
+[[Join the rabbits and ground squirrels]]]</tw-passagedata><tw-passagedata pid="80" name="Join the rabbits and ground squirrels" tags="" position="1.6666666666666947,1244.6666666666665" size="100,100">You approach the group standing huddled beneath the nearest structure. (if: $held_form is &quot;Caia&quot;) [You have to duck to allow your antlers to fit underneath, but once] (else:) [Once] you&#39;re underneath, the wind no longer batters your fur and a wave of rejuvenating warmth flows over you. (if: $held_form is &quot;Holven&quot;) [The warmth is quickly countered by the cold response of the group, though.]
+
+(if: $held_form is &quot;Holven&quot;) [&quot;One of the King&#39;s men come to spy on us?&quot; A ground squirrels seethes. A hare grabs her arm and tugs her backwards. &quot;Sorry, we&#39;re all just cold, ya know? No offense taken or meant, I hope. Heh.&quot; The hare laughs nervously and glances at the others.
+
+&quot;Yeah, of course no offense to the mighty Holven,&quot; the ground squirrel rolls her eyes. &quot;Come on, it&#39;s almost time to go back inside anyway.&quot; The ground squirrels leads the apprehensive group away from the structure. 
+
+As soon as they emerge into the open air, the winds batter their fur and they huddle together uncomfortably. They only walk a short distance before they stop and look at you expectantly, as if waiting for you to leave. 
+
+You look around. You can make it as far as the next structure over, now occupied by the caribou and fox.
+
+
+You&#39;ve gained knowledge!
+
+
+[[Join the caribou]]
+(set: $Holven_knowledge_3 to true)]
+
+(if: $held_form is &quot;Holven&quot; AND ((history:) contains &quot;\&quot;Cyrus?\&quot;&quot; OR (history:) contains &quot;\&quot;I just want to stay warm\&quot;&quot;)) [text for returning to the group]
+
+(if: $held_form is &quot;Caia&quot;) [&quot;So what we have to do is sneak up on him...&quot; The hare who was speaking quiets when he notices you.
+
+&quot;We aren&#39;t going to //actually// break out, just so you know,&quot; a ground squirrel mutters. A hare elbows her and glares hard, but it doesn&#39;t quiet the ground squirrel for long. &quot;What? You know how Caia are! Can&#39;t keep a secret or tell a lie to save their lives.&quot;
+
+[[&quot;What&#39;s this about breaking out?&quot;]]
+[[Remain silent-&gt;Remain silent Yard style]]]
+
+
+
+STILL NEED RABBIT SECTIONS</tw-passagedata><tw-passagedata pid="81" name="Join the caribou" tags="" position="215.00000000000003,1209.6666666666665" size="100,100">(if: $held_form is &quot;Holven&quot;) [You step away from the shelter and into the blistering winds of the Yard. The fox sees you coming and tries to subtly get the caribou&#39;s attention. 
+
+The caribou speaks before you can feel the warmth of the structure. &quot;Ah, a Holven! Are you looking for Cyrus, mayhaps? Or would you prefer our shelter?&quot;
+
+[[&quot;Cyrus?&quot;]]
+[[&quot;I just want to stay warm.&quot;]]]
+
+STILL NEED RABBIT AND CARIBOU SECTIONS</tw-passagedata><tw-passagedata pid="82" name="Join the wolf" tags="" position="393.3333333333333,1079.6666666666665" size="100,100">(if: $held_form is &quot;Holven&quot;) [You journey across the yard and join the wolf underneath the largest structure in the Yard. He looks at you with a measured gaze, and you can feel the air of authority floating about him. 
+
+&quot;You must be new here.&quot; He crosses his arms and looks you up and down. You notice something shiny hidden in his pocket. &quot;Name&#39;s Cyrus.&quot;
+
+[[&quot;Why is everyone so afraid of me?&quot;]]
+[[&quot;What did the other Holven give you?&quot;]]
+[[&quot;Can you help me escape?&quot;-&gt;Can Cyrus help me escape?]]]</tw-passagedata><tw-passagedata pid="83" name="&quot;Cyrus?&quot;" tags="" position="258.3333333333333,1331.333333333333" size="100,100">(if: $held_form is &quot;Holven&quot;) [&quot;Cyrus?&quot; you ask, joining them underneath the shelter.
+
+The fox shakes his head and limps out into the snow mumbling to himself. &quot;Better to freeze than to upset &#39;em.&quot;
+
+The caribou looks after the fox with concern. &quot;Cyrus would be your fellow Holven over there,&quot; he motions to the lone wolf. &quot;You must be new here, but ah...I really must be helping my acquaintance.&quot; The caribou nods his head politely and ducks out from the structure, leaving you alone once more. 
+
+You glance toward Cyrus. He is making no effort to hide that he is watching you. You measure the distance with your eyes. You could make it that far. You also look back to the group you&#39;ve just left - they&#39;re huddled once more under the shelter chattering enthusiastically.
+
+[[Join Cyrus-&gt;Join the wolf]]
+[[Rejoin the rabbits and ground squirrels-&gt;Join the rabbits and ground squirrels]]]</tw-passagedata><tw-passagedata pid="84" name="&quot;I just want to stay warm.&quot;" tags="" position="373.33333333333337,1251.3333333333333" size="100,100">(if: $held_form is &quot;Holven&quot;) [&quot;I just want to stay warm,&quot; you say with a smile, joining the duo underneath the structure. You rub your shivering arms for emphasis.
+
+The fox shakes his head and limps out into the snow mumbling to himself. &quot;Better to freeze than to upset &#39;em.&quot;
+
+The caribou looks after the fox with concern. &quot;I really must be helping my acquaintance. You may have our shelter, though.&quot; The caribou nods his head politely and ducks out from the structure, leaving you alone once more. 
+
+You glance toward the lone wolf. He is making no effort to hide that he is watching you. You measure the distance with your eyes. You could make it that far. You also look back to the group you&#39;ve just left - they&#39;re huddled once more under the shelter chattering enthusiastically.
+
+[[Join Cyrus-&gt;Join the wolf]]
+[[Rejoin the rabbits and ground squirrels-&gt;Join the rabbits and ground squirrels]]]</tw-passagedata><tw-passagedata pid="85" name="&quot;Why is everyone so afraid of me?&quot;" tags="" position="533.3333333333334,1262.9999999999995" size="100,100">(if: $held_form is &quot;Holven&quot;) [&quot;Why is everyone so afraid of me?&quot;
+
+&quot;You must not be from around here,&quot; Cyrus says with some skepticism. &quot;You&#39;re a Holven, friend. If we were on the outside, we could do almost anything we pleased.&quot; He smiles. &quot;Keyword there being //almost//. I take it you found that out the hard way.&quot;
+
+(unless: (history:) contains &quot;Can Cyrus help me escape?&quot;) [[[&quot;Can you help me escape?&quot;-&gt;Can Cyrus help me escape?]]]
+(if: (history:) contains &quot;Can Cyrus help me escape?&quot;) [[&quot;How far can my status get me?&quot;]]
+(unless: (history:) contains &quot;\&quot;What did the other Holven give you?\&quot;&quot;) [[&quot;What did the other Holven give you?&quot;]]]</tw-passagedata><tw-passagedata pid="86" name="&quot;What did the other Holven give you?&quot;" tags="" position="735,1069.6666666666665" size="100,100">(if: $held_form is &quot;Holven&quot;) [&quot;What did the other Holven give you?&quot; you ask, motioning toward Cyrus&#39; pocket. 
+
+Cyrus bristles, but then regains his composure and slips his hands inside his pockets, obscuring the item from view. &quot;First time in Kha&#39;bad, eh? If you want to make it around here, don&#39;t ask questions, especially to people like me.&quot;
+
+(unless: (history:) contains &quot;\&quot;Why is everyone so afraid of me?\&quot;&quot;) [[&quot;Why is everyone so afraid of me?&quot;]]
+(unless: (history:) contains &quot;Can Cyrus help me escape?&quot;) [[&quot;Can you help me escape?&quot;-&gt;Can Cyrus help me escape?]]
+(if: (history:) contains &quot;Can Cyrus help me escape?&quot;) [[&quot;How far can my status get me?&quot;]]]</tw-passagedata><tw-passagedata pid="87" name="Can Cyrus help me escape?" tags="" position="588.3333333333331,1139.6666666666663" size="100,100">(if: $held_form is &quot;Holven&quot;)[&quot;Can you help me escape?&quot; you ask. 
+
+Cyrus raises his eyebrows and peels his lips back in a snarling smile. &quot;That&#39;s pretty forward, Newcomer. You think just becaus you&#39;re one of us you&#39;re going to get special treatment? Status only gets you so far in here.&quot; He shakes his head and his smile fades a bit. It seems his words ring true for him as well.
+
+[[&quot;How far can my status get me?&quot;]]
+(unless: (history:) contains &quot;\&quot;Why is everyone so afraid of me?\&quot;&quot;) [[&quot;Why is everyone so afraid of me?&quot;]]
+(unless: (history:) contains &quot;\&quot;What did the other Holven give you?\&quot;&quot;) [[&quot;What did the other Holven give you?&quot;]]]</tw-passagedata><tw-passagedata pid="88" name="&quot;How far can my status get me?&quot;" tags="" position="760.0000000000001,1219.6666666666665" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="89" name="&quot;What&#39;s this about breaking out?&quot;" tags="" position="0,1391.3333333333333" size="100,100">(if: $held_form is &quot;Caia&quot;) [&quot;What&#39;s this about breaking out?&quot;
+
+The group stares at you in silence. &quot;Not worth it...&quot; one of the hares mumbles after a moment. 
+
+Then: &quot;The Holven are planning on breaking out today. Cyrus has the key. We need to steal it from him!&quot; one of the ground squirrels blurts out and points toward {(if: (history:) contains &quot;Join the wolf&quot;) [Cyrus.] (else:) [the lone wolf.]} Most of the group look away in shame while a few others pummel and smack him. &quot;I swear it&#39;s impossible to keep you lot alive,&quot; a hare groans.
+
+{(if: $copperkey is 1) [
+[[&quot;You mean a key like this?&quot;]]
+] (else:) [
+[[&quot;How do we get the key?&quot;]]
+]}
+]</tw-passagedata><tw-passagedata pid="90" name="Remain silent Yard style" tags="" position="120,1391.3333333333333" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="91" name="&quot;You mean a key like this?&quot;" tags="" position="0,1541.3333333333333" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="92" name="&quot;How do we get the key?&quot;" tags="" position="120,1541.3333333333333" size="100,100">Double-click this passage to edit it.</tw-passagedata></tw-storydata>
 
 <script title="Twine engine code" data-main="harlowe">"use strict";function _defineProperty(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}var _slicedToArray=function(){function e(e,t){var n=[],r=!0,i=!1,o=void 0;try{for(var a,s=e[Symbol.iterator]();!(r=(a=s.next()).done)&&(n.push(a.value),!t||n.length!==t);r=!0);}catch(e){i=!0,o=e}finally{try{!r&&s.return&&s.return()}finally{if(i)throw o}}return n}return function(t,n){if(Array.isArray(t))return t;if(Symbol.iterator in Object(t))return e(t,n);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};!function(){/**
  * @license almond 0.3.3 Copyright jQuery Foundation and other contributors.

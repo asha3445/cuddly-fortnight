@@ -95,7 +95,7 @@ Two piercing yellow eyes peer between the iron bars in the top of the door.
 
 (else:) [You pull against your chains. You can stretch just far enough to brush the edge of her hair away. You wiggle your fingers - and grab the twine necklace! 
 
-(text-style: &quot;bold&quot;) [&quot;Hey!&quot;] The woman wakes and savagely tries to bite you! You manage to stumble back before she can sink her pointed teeth into your arm. You look down: you&#39;re left holding a copper key. 
+(text-style: &quot;bold&quot;) [&quot;Hey!&quot;] The girl suddenly wakes and struggles against her bonds. You stumble back before she can bite you, but even so she bares her pointed teeth and growls. You look down: you&#39;re left holding a copper key. 
 
 Then - (text-style: &quot;shudder&quot;) [Bang!] A heavy beating comes from the wooden door and reinvigorates the aching in your head. 
 
@@ -274,7 +274,7 @@ Around her neck is a thin necklace of twine, and hidden beneath her mane of hair
 [[Take the necklace]]
 [[Move her hair]]
 [[Leave her be]]
-(set: $curious to it +1)]</tw-passagedata><tw-passagedata pid="17" name="Take the necklace" tags="" position="1107.3333333333335,253.33333333333331" size="100,100">You reach down and - delicately - slip your fingers under the necklace. You almost lift it from around her head, but then - (text-style: &quot;bold&quot;) [&quot;Hey!&quot;] The girl wakes and savagely tries to bite you! You manage to stumble back before she can sink her pointed teeth into your arm. You look down: you&#39;re left holding a copper key. 
+(set: $curious to it +1)]</tw-passagedata><tw-passagedata pid="17" name="Take the necklace" tags="" position="1107.3333333333335,253.33333333333331" size="100,100">You reach down and - delicately - slip your fingers under the necklace. You almost lift it from around her head, but then - (text-style: &quot;bold&quot;) [&quot;Hey!&quot;] The girl suddenly wakes and struggles against her bonds. You stumble back before she can bite you, but even so she bares her pointed teeth and growls. You look down: you&#39;re left holding a copper key.
 
 (if: (history:) contains &quot;Move her hair&quot;) [&quot;I told ye to leave&#39;er be!&quot; Rhegan calls.] You get to your feet and dust yourself off. The girl watches you with a feral gleam in her eyes and a growl contorting her mouth. 
 
@@ -420,50 +420,24 @@ Two piercing yellow eyes peer between the iron bars in the top of the door.
 
 [[&quot;There&#39;s been a mistake.&quot;]]
 [[Remain silent]]
-(set: $Rhegans_name to true)</tw-passagedata><tw-passagedata pid="29" name="&quot;There&#39;s been a mistake.&quot;" tags="" position="328.3333333333333,530.3333333333335" size="100,100">(if: $Rhegans_name is true) [
-[&quot;I think there&#39;s been a mistake!&quot; you call out. 
+(set: $Rhegans_name to true)</tw-passagedata><tw-passagedata pid="29" name="&quot;There&#39;s been a mistake.&quot;" tags="" position="328.3333333333333,530.3333333333335" size="100,100">&quot;I think there&#39;s been a mistake!&quot; you call out.
 
-The two yellow eyes slide over to you. They aren&#39;t human. For a moment there is silence, and then a deep, boisterous laugh bounces around your cell.
+The two yellow eyes slide over to you. They aren&#39;t human. {(if: $standing is true OR $Rhegans_name_stand is true OR $copperkey is 1) [&quot;Sit down, human, or you will be bound as she is.&quot;
 
-&quot;Mistake? Your kind always claims that, human. Be grateful King Arun has given you his grace. Serve your time peacefully, or you will be put on the Chain. The Snowfield is not kind to the Unfurred.&quot;
+You sheepishly back away {(if: $copperkey is 1) [from the woman, careful to keep the copper key out of sight.] (else:) [from the woman.]} 
 
-You have gained knowledge! (set: $Arun_knowledge_1 to true)(set: $Unfurred_1 to true)
+When the guard deems you&#39;ve gone far enough, he continues: &quot;There is no mistake.
+] (else:) [For a moment there is silence, and then a deep, boisterous laugh bounces around your cell.
 
-[[Ask to see King Arun]]
-[[Ask to be put on the Chain]]
-[[Say nothing]]
-(set: $self_preservation to it +1)]
-] (else-if: $standing OR $Rhegans_name_stand is true) [
-[&quot;I think there&#39;s been a mistake!&quot; you call out. 
-
-The two yellow eyes slide over to you. They aren&#39;t human. &quot;Sit down, human, or you will be bound as she is.&quot;
-
-You sheepishly back away from the woman. The guard deems you far away enough and continues speaking: &quot;There is no mistake. Be grateful King Arun has given you his grace. Serve your time peacefully, or you will be put on the Chain. The Snowfield is not kind to the Unfurred.&quot;
+&quot;Mistake? Your kind always claims that, human. Be grateful King Arun has given you his grace.
+]} Serve your time peacefully, or you will be put on the Chain. The Snowfield is not kind to the Unfurred.&quot;
 
 You have gained knowledge! (set: $Arun_knowledge_1 to true)(set: $Unfurred_1 to true)
 
 [[Ask to see King Arun]]
 [[Ask to be put on the Chain]]
 [[Say nothing]]
-(set: $self_preservation to it +1)]
-]
-
-(if: $copperkey is 1) [
-[&quot;I think there&#39;s been a mistake!&quot; you call out. 
-
-The two yellow eyes slide over to you. They aren&#39;t human. &quot;Sit down, human, or you will be bound as she is.&quot;
-
-You sheepishly back away from the woman, careful to keep the key out of sight. 
-
-The guard deems you far away enough and continues speaking: &quot;There is no mistake. Be grateful King Arun has given you his grace. Serve your time peacefully, or you will be put on the Chain. The Snowfield is not kind to the Unfurred.&quot;
-
-You have gained knowledge! (set: $Arun_knowledge_1 to true) (set: $Unfurred_1 to true)
-
-[[Ask to see King Arun]]
-[[Ask to be put on the Chain]]
-[[Say nothing]]
-(set: $self_preservation to it +1)]
-]</tw-passagedata><tw-passagedata pid="30" name="&quot;How do we escape?&quot;" tags="" position="473.00000000000006,270.00000000000006" size="100,100">&quot;How do we escape?&quot; you ask.
+(set: $self_preservation to it +1)</tw-passagedata><tw-passagedata pid="30" name="&quot;How do we escape?&quot;" tags="" position="473.00000000000006,270.00000000000006" size="100,100">&quot;How do we escape?&quot; you ask.
 
 &quot;Escape?&quot; Rhegan gives you a bewildered glance. &quot;Why&#39;d you ever wanna do that?&quot;
 
@@ -899,7 +873,7 @@ When you don&#39;t move, he continues: &quot;Accidents //can// happen. King Arun
 
 
 [[Follow the guard]]
-(set: $self_preservation to it +1)</tw-passagedata><tw-passagedata pid="58" name="Follow the guard" tags="" position="1757.6666666666663,850.6666666666671" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="59" name="Slip away" tags="" position="693.3333333333333,659.6666666666664" size="100,100">You take a few quiet steps in the opposite direction, and then few more. It doesn&#39;t take long for the guard to notice. &quot;Hey!&quot; He yells. 
+(set: $self_preservation to it +1)</tw-passagedata><tw-passagedata pid="58" name="Follow the guard" tags="" position="1805.9999999999995,732.3333333333337" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="59" name="Slip away" tags="" position="693.3333333333333,659.6666666666664" size="100,100">You take a few quiet steps in the opposite direction, and then few more. It doesn&#39;t take long for the guard to notice. &quot;Hey!&quot; He yells. 
 
 You turn and run, but he&#39;s hot on your tail!
 
@@ -957,7 +931,7 @@ A bony hand grabs your arm before you reach it, and the familiar words enter you
 
 [[&quot;Help, then!&quot;-&gt;&quot;Unfurred?&quot;]]
 (if: $Prison_Revival is true) [[&quot;What just happened?&quot;]]
-[[Ignore her]]]</tw-passagedata><tw-passagedata pid="63" name=" follow again" tags="" position="1510,877.3333333333338" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="64" name="&quot;Unfurred?&quot;" tags="" position="763.3333333333335,827.9999999999997" size="100,100">(if: (history:) contains &quot;Go right&quot;) [&quot;What&#39;s an Unfurred?&quot; you ask (if: $Prison_Revival is true and (history:) contains &quot;Go right&quot;) [hesitantly.] (else:) [, gently reclaiming your arm from the woman.] (if: $Unfurred_1 is true) [&quot;The guard mentioned it too.&quot;] &quot;Heh...(if: $Prison_Revival is true and (history:) contains &quot;Go right&quot;) [you seem confused, dear. //You//] (else:) [//you//] are an Unfurred.&quot; She laughs. &quot;My dear, you are no Beast, you are a human, an Uninitiated, an Ungifted, an Un//furred//. But...&quot; she pauses, then tightly grips your arm again. &quot;You are //not//...at least, not entirely...&quot; You sense her peer at you with unseen eyes. &quot;You have come back...you have seen death as a Beast and awoken from it...Are you a Revenant?&quot;
+[[Ignore her]]]</tw-passagedata><tw-passagedata pid="63" name=" follow again" tags="" position="1678.3333333333333,817.3333333333338" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="64" name="&quot;Unfurred?&quot;" tags="" position="758.3333333333335,802.9999999999997" size="100,100">(if: (history:) contains &quot;Go right&quot;) [&quot;What&#39;s an Unfurred?&quot; you ask (if: $Prison_Revival is true and (history:) contains &quot;Go right&quot;) [hesitantly.] (else:) [, gently reclaiming your arm from the woman.] (if: $Unfurred_1 is true) [&quot;The guard mentioned it too.&quot;] &quot;Heh...(if: $Prison_Revival is true and (history:) contains &quot;Go right&quot;) [you seem confused, dear. //You//] (else:) [//you//] are an Unfurred.&quot; She laughs. &quot;My dear, you are no Beast, you are a human, an Uninitiated, an Ungifted, an Un//furred//. But...&quot; she pauses, then tightly grips your arm again. &quot;You are //not//...at least, not entirely...&quot; You sense her peer at you with unseen eyes. &quot;You have come back...you have seen death as a Beast and awoken from it...Are you a Revenant?&quot;
 
 [[&quot;Uh...?&quot;]]
 (set: $curious to it +1)]
@@ -983,7 +957,7 @@ You stand in silence.
 &quot;Ah! But! I can help with that...I can help with much.&quot; She sidles up to you and takes your arm gently. &quot;But you can do something for me as well, yes indeed, yes, undoubtedly...&quot;
 
 [[&quot;What is it?&quot;]]
-[[Kindly refuse]]</tw-passagedata><tw-passagedata pid="66" name="&quot;What just happened?&quot;" tags="" position="918.3333333333335,891.3333333333333" size="100,100">&quot;What just happened?&quot; you ask. (if: (history:) contains &quot;Keep going!&quot;) [You furitively glance at the guard.] 
+[[Kindly refuse]]</tw-passagedata><tw-passagedata pid="66" name="&quot;What just happened?&quot;" tags="" position="913.3333333333335,862.9999999999999" size="100,100">&quot;What just happened?&quot; you ask. (if: (history:) contains &quot;Keep going!&quot;) [You furitively glance at the guard.] 
 
 &quot;You&#39;ve been imprisoned, dear.&quot; She gives you a sympathetic smile, or at least, her giant lips peeling back to show her yellow snaggleteeth //seems// sympathetic. (if: (history:) contains &quot;Keep going!&quot;) [&quot;One moment.&quot; 
 
@@ -996,7 +970,7 @@ You look over - the guard is completely still, stuck with his spear pointing at 
 &quot;Now, as I was saying, you&#39;ve been imprisoned.&quot;] When you don&#39;t respond, her smile fades away. &quot;Unless...&quot; She pauses. (if: (history:) contains &quot;Keep going!&quot;) [She tightly grabs your arm and] (else:) [You feel her grip on your arm tighten, and she] pulls you closer to her cell. &quot;No, no...it&#39;s not //that// you&#39;re asking about, is it? You&#39;re an Unfurred...but you are //not//...at least, not entirely.&quot; You sense her unseen eyes slowly slide up to meet yours. &quot;Are you a Revenant?&quot;
 
 [[&quot;Uh...?&quot;]]
-(if: $player_knowledge_1 is true) [[&quot;I&#39;m from Revenant&#39;s Keep.&quot;]]</tw-passagedata><tw-passagedata pid="67" name="&quot;I&#39;m from Revenant&#39;s Keep.&quot;" tags="" position="593.3333333333333,994.6666666666664" size="100,100">&quot;I&#39;m from Revenant&#39;s Keep,&quot; you say.
+(if: $player_knowledge_1 is true) [[&quot;I&#39;m from Revenant&#39;s Keep.&quot;]]</tw-passagedata><tw-passagedata pid="67" name="&quot;I&#39;m from Revenant&#39;s Keep.&quot;" tags="" position="591.6666666666666,994.6666666666664" size="100,100">&quot;I&#39;m from Revenant&#39;s Keep,&quot; you say.
 
 &quot;Oh ho! //This// is exciting!&quot; She squeezes your arm, but then quickly releases you. &quot;Your kind is very powerful, dear. But...&quot; She grips your arm again, tighter. &quot;The King does not know what he&#39;s done! The Council of Twelve is missing you, dear. The world...&quot; she trails off. &quot;Oh no. Oh no indeed...&quot;
 
@@ -1019,7 +993,7 @@ Your mind swirls, thoughts play out as she sifts through them. &quot;Yes...yes..
 
 Her grip on your arm tightens, painfully so. Too entranced to pull away, you stand complacently as her fingernails dig into your skin. You can open your eyes just enough to see blood leaking from your arm - it&#39;s purple. 
 
-(if: $selfless &gt; $self_preservation and $curious) [&quot;You are the Caribou, Revenant, you have been selfless, you have cared for others.](if: $self_preservation &gt; $selfless and $curious) [&quot;You are the Wolf, Revenant, you have protected yourself, you have spoken out.] (if: $curious &gt; $self_preservation and $selfless) [&quot;You are the Hare, Revenant, you have been curious, you have investigated.] This is the Snowfield&#39;s gift to you.&quot;
+(if: $selfless is (max: $selfless, $self_preservation, $curious)) [&quot;You are the Caribou, Revenant, you have been selfless, you have cared for others.](else-if: $self_preservation is (max: $self_preservation, $selfless, $curious)) [&quot;You are the Wolf, Revenant, you have protected yourself, you have spoken out.] (else-if: $curious is (max: $curious, $selfless, $self_preservation)) [&quot;You are the Hare, Revenant, you have been curious, you have investigated.] This is the Snowfield&#39;s gift to you.&quot;
 
 She releases your arm and steps back. It takes a moment for your eyes to regain focus and your lungs to be rid of her breath.
 
@@ -1027,7 +1001,14 @@ She releases your arm and steps back. It takes a moment for your eyes to regain 
 
 You study your hands. They look the same, but something feels...different.
 
-(if: $selfless &gt; $self_preservation and $curious)[[&quot;What did you do to me?&quot;-&gt;Caribou]](if: $self_preservation &gt; $selfless and $curious)[[&quot;What did you do to me?&quot;-&gt;Wolf]](if: $curious &gt; $self_preservation and $selfless)[[&quot;What did you do to me?&quot;-&gt;Rabbit]]
+{(if: $selfless is (max: $selfless, $self_preservation, $curious)) [
+[[&quot;What did you do to me?&quot;-&gt;Caribou]]
+] (else-if: $self_preservation is (max: $self_preservation, $curious, $selfless)) [
+[[&quot;What did you do to me?&quot;-&gt;Wolf]]
+] (else-if: $curious is (max: $curious, $selfless, $self_preservation))[
+[[&quot;What did you do to me?&quot;-&gt;Rabbit]]
+]
+}
 (set: $curious to it +1)</tw-passagedata><tw-passagedata pid="69" name="Kindly refuse" tags="" position="398.3333333333334,937.9999999999997" size="100,100">&quot;I&#39;m sorry.&quot; You extricate your arm from the woman&#39;s grasp. &quot;I have-&quot;(set: $self_preservation to it +2)
 
 &quot;Better things to do?&quot; She interrupts you with a cackle. &quot;My dear, what I&#39;m asking of you, you will do anyway. &quot;My sisters live on the edge of Silva, out of Arun&#39;s reach. They will help you cross the Snowfield.&quot;
@@ -1040,7 +1021,7 @@ Your mind swirls, thoughts play out as she sifts through them. &quot;Yes...yes..
 
 Her grip on your arm tightens, painfully so. Too entranced to pull away, you stand complacently as her fingernails dig into your skin. You can open your eyes just enough to see blood leaking from your arm - it&#39;s purple. 
 
-(if: $selfless is (max: $selfless, $self_preservation, $curious)) [&quot;You are the Caribou, Revenant, you have been selfless, you have cared for others.](else-if: $self_preservation is (max: $selfless, $self_preservation, $curious)) [&quot;You are the Wolf, Revenant, you have protected yourself, you have spoken out.] (else-if: $curious is (max: $selfless, $self_preservation, $curious)) [&quot;You are the Hare, Revenant, you have been curious, you have investigated.] This is the Snowfield&#39;s gift to you.&quot;
+(if: $selfless is (max: $selfless, $self_preservation, $curious)) [&quot;You are the Caribou, Revenant, you have been selfless, you have cared for others.](else-if: $self_preservation is (max: $self_preservation, $selfless, $curious)) [&quot;You are the Wolf, Revenant, you have protected yourself, you have spoken out.] (else-if: $curious is (max: $curious, $selfless, $self_preservation)) [&quot;You are the Hare, Revenant, you have been curious, you have investigated.] This is the Snowfield&#39;s gift to you.&quot;
 
 She releases your arm and steps back. It takes a moment for your eyes to regain focus and your lungs to be rid of her breath.
 
@@ -1050,12 +1031,12 @@ You study your hands. They look the same, but something feels...different.
 
 {(if: $selfless is (max: $selfless, $self_preservation, $curious)) [
 [[&quot;What did you do to me?&quot;-&gt;Caribou]]
-] (else-if: $self_preservation is (max: $selfless, $self_preservation, $curious)) [
+] (else-if: $self_preservation is (max: $self_preservation, $curious, $selfless)) [
 [[&quot;What did you do to me?&quot;-&gt;Wolf]]
-] (else-if: $curious is (max: $selfless, $self_preservation, $curious))[
+] (else-if: $curious is (max: $curious, $selfless, $self_preservation))[
 [[&quot;What did you do to me?&quot;-&gt;Rabbit]]
 ]
-}</tw-passagedata><tw-passagedata pid="70" name="Caribou" tags="" position="290,736.3333333333331" size="100,100">&quot;What did you do to me?&quot; you ask.
+}</tw-passagedata><tw-passagedata pid="70" name="Caribou" tags="" position="290,734.6666666666665" size="100,100">&quot;What did you do to me?&quot; you ask.
 
 &quot;What needed to be done,&quot; she grumbles. &quot;Arun eats memories - he takes them from his prisoners. For you though, your memories are your powers. If you don&#39;t remember how it feels to have the Beast blood then you are no threat to Arun. My sisters and I can fix that, though.&quot;
 
@@ -1063,11 +1044,11 @@ The woman pulls her hair away from her face and grins. You recoil - though she a
 
 You watch the old woman step to the back of her cell. She would almost be hidden in the darkness if it wasn&#39;t for her glowing veins. 
 
-[[Assume the Form of the caribou-&gt;transform]]
+[[Transform]]
 
 (set: $caribou to true)
 (set: $held_form to &quot;Caia&quot;)
-</tw-passagedata><tw-passagedata pid="71" name="Wolf" tags="" position="166.6666666666668,642.9999999999998" size="100,100">&quot;What did you do to me?&quot; you ask.
+(set: $Caia_knowledge_1 to true)</tw-passagedata><tw-passagedata pid="71" name="Wolf" tags="" position="166.6666666666668,642.9999999999998" size="100,100">&quot;What did you do to me?&quot; you ask.
 
 &quot;What needed to be done,&quot; she grumbles. &quot;Arun eats memories - he takes them from his prisoners. For you though, your memories are your powers. If you don&#39;t remember how it feels to have the Beast blood then you are no threat to Arun. My sisters and I can fix that, though.&quot;
 
@@ -1075,11 +1056,11 @@ The woman pulls her hair away from her face and grins. You recoil - though she a
 
 You watch the old woman step to the back of her cell. She would almost be hidden in the darkness if it wasn&#39;t for her glowing veins. 
 
-[[Assume the Form of the wolf-&gt;transform]]
+[[Transform]]
 
 (set: $wolf to true)
 (set: $held_form to &quot;Holven&quot;)
-</tw-passagedata><tw-passagedata pid="72" name="Rabbit" tags="" position="20,631.3333333333333" size="100,100">&quot;What did you do to me?&quot; you ask.
+(set: $Holven_knowledge_3 to true)</tw-passagedata><tw-passagedata pid="72" name="Rabbit" tags="" position="20,631.3333333333333" size="100,100">&quot;What did you do to me?&quot; you ask.
 
 &quot;What needed to be done,&quot; she grumbles. &quot;Arun eats memories - he takes them from his prisoners. For you though, your memories are your powers. If you don&#39;t remember how it feels to have the Beast blood then you are no threat to Arun. My sisters and I can fix that, though.&quot;
 
@@ -1087,11 +1068,11 @@ The woman pulls her hair away from her face and grins. You recoil - though she a
 
 You watch the old woman step to the back of her cell. She would almost be hidden in the darkness if it wasn&#39;t for her glowing veins. 
 
-[[Assume the Form of the hare-&gt;transform]]
+[[Transform]]
 
 (set: $rabbit to true)
 (set: $held_form to &quot;Lepus&quot;)
-</tw-passagedata><tw-passagedata pid="73" name="transform" tags="" position="40.00000000000007,784.6666666666664" size="100,100">You close your eyes as a shudder racks your body. You only notice minor sensations - a faint itch atop your skin, some pressure on your head - and then everything quickly returns to normal. 
+(set: $Lepus_knowledge_1 to true)</tw-passagedata><tw-passagedata pid="73" name="Transform" tags="" position="40.00000000000007,782.9999999999998" size="100,100">You close your eyes as a shudder racks your body. You only notice minor sensations - a faint itch atop your skin, some pressure on your head - and then everything quickly returns to normal. 
 
 (if: $held_form is &quot;Holven&quot;) [You open your eyes and study your hands. They&#39;re still //shaped// like your hands, but now they&#39;re covered in thick grey fur; so too are your arms, legs, and body. Your legs are misshapen like a dog&#39;s, and your feet are now paws. You feel your face - what was once a nose and mouth is now a muzzle with thin lips and a wet nose. 
 
@@ -1101,7 +1082,11 @@ The woman in her cell brushes her hair aside and you can hear it clearly. All th
 
 You blink. The dimly-lit hallway looks brighter now, and one cursory glance at the old woman&#39;s cell reveals her stooped over a small pile of hay near the back wall.]
 
-You step toward the door, a little overwhelmed but not surprised. Once upon a time this Beast Blood flowed through your veins and you existed as a $held_form - a person with the blood of a (if: $held_form is &quot;Caia&quot;) [caribou.] (if: $held_form is &quot;Holven&quot;) [wolf.] (if: $held_form is &quot;Lepus&quot;) [rabbit.]
+You step toward the door, a little overwhelmed but not surprised. Once upon a time this Beast Blood flowed through your veins and you existed as a $held_form - a person with the blood of a (if: $held_form is &quot;Caia&quot;) [caribou.] (if: $held_form is &quot;Holven&quot;) [wolf.] (if: $held_form is &quot;Lepus&quot;) [hare.]
+
+
+You&#39;ve gained knowledge!
+
 
 You place your hands against the door, preparing to leave. 
 
@@ -1115,114 +1100,845 @@ You place your hands against the door, preparing to leave.
 
 [[Without you, the Beasts you once were can escape judgement and death.]]</tw-passagedata><tw-passagedata pid="78" name="Without you, the Beasts you once were can escape judgement and death." tags="" position="25.00000000000003,1078" size="100,100">To restore the balance, you must regain the forms you once held and return to your home in Revenant&#39;s Keep, else give rise to immortal beings who will upset the cycle of life and death.
 
-[[So you exit the prison and begin your journey in the Sylvan Snowfields.]]</tw-passagedata><tw-passagedata pid="79" name="So you exit the prison and begin your journey in the Sylvan Snowfields." tags="" position="155.00000000000003,1089.6666666666665" size="100,100">You emerge into the Prison Yard - an area walled in stone and covered with freshly fallen snow. 
+[[So you exit the prison and begin your journey in the Sylvan Snowfields.]]</tw-passagedata><tw-passagedata pid="79" name="So you exit the prison and begin your journey in the Sylvan Snowfields." tags="" position="155.00000000000003,1087.9999999999998" size="100,100">You emerge into the Prison Yard - an area walled in stone and covered with freshly fallen snow. 
 
-Glacial winds cut through the Yard, forcing most Beasts to huddle beneath umbrella-like structures with melted snow underneath. Only those with the most hardy Forms seem to tolerate the wind, but even they can&#39;t stay unsheltered for long. 
+Glacial winds cut through the Yard, forcing most Beasts to huddle beneath umbrella-like structures with melted snow underneath. Only those with the most hardy Forms seem to tolerate the wind, but even they can&#39;t stay unsheltered for long. The only ones not shivering are the guards spaced around the Yard - armor-clad bears and snow leopards.
 
-Underneath the nearest - and smallest - structure is a group of hares and ground squirrels chatering quickly among themselves. Just beyond them is a lone caribou helping an injured fox limp toward another structure. Further on is a wolf, leering at them. You see another wolf approach, slip something to him, and then walk away. 
+Underneath the nearest and smallest structure is a group of hares and ground squirrels dressed in what look like ragged burlap sacks. They shiver and chatter quickly among themselves.
 
-Spaced around the yard are more guards - armored bears and snow leopards. They watch each prisoner closely, but disregard the wolves. 
+Further on is a caribou with broken antlers helping an elderly fox limp through the snow toward another warm shelter. The fox looks irritated, but can&#39;t shake the caribou off. 
 
-You&#39;ve attracted the attention of a snow leopard. He shifts, turning his armor-clad head in your direction. You&#39;ve got to make a move before he suspects anything. 
+Near the middle of the Yard is a black wolf leering at the caribou. His attention is broken briefly by the arrival of another wolf, who slips him something without slowing. 
 
-(if: $held_form is &quot;Caia&quot;) [As a caribou, you have a strong tolerance for the cold and can make it most of the way across the Yard.
+You&#39;ve attracted the attention of a snow leopard guard. She shifts, turning her armor-clad head in your direction. You&#39;ve got to make a move before she suspects anything. 
 
-[[Join the rabbits and ground squirrels]]
+
+(if: $held_form is &quot;Caia&quot;) [As a caribou in prison garb, you have three points of cold resistance, allowing you to make it halfway across the Yard.
+
+[[Join the hares]]
 [[Join the caribou]]
-[[Join the wolf]]](if: $held_form is &quot;Lepus&quot;) [As a hare, you can move quickly and cover more ground before succumbing to the cold.
+[[Join the wolf]]
+] (if: $held_form is &quot;Lepus&quot;) [As a hare in prison garb, you have two points of cold resistance, allowing you to make it as far as the caribou&#39;s structure.
 
-[[Join the rabbits and ground squirrels]] 
-[[Join the caribou]]](if: $held_form is &quot;Holven&quot;) [As a wolf, you can move short distances before succumbing to the cold.
+[[Join the hares]]
+[[Join the caribou]]
+] (if: $held_form is &quot;Holven&quot;) [As a wolf in prison garb, you have one point of cold resistance, allowing you to make it as far as the group of rabbits and ground squirrels.
 
-[[Join the rabbits and ground squirrels]]]</tw-passagedata><tw-passagedata pid="80" name="Join the rabbits and ground squirrels" tags="" position="1.6666666666666947,1244.6666666666665" size="100,100">You approach the group standing huddled beneath the nearest structure. (if: $held_form is &quot;Caia&quot;) [You have to duck to allow your antlers to fit underneath, but once] (else:) [Once] you&#39;re underneath, the wind no longer batters your fur and a wave of rejuvenating warmth flows over you. (if: $held_form is &quot;Holven&quot;) [The warmth is quickly countered by the cold response of the group, though.]
+[[Join the hares]]
+]</tw-passagedata><tw-passagedata pid="80" name="Join the hares" tags="" position="71.66666666666669,1217.9999999999995" size="100,100">(if: $held_form is &quot;Holven&quot;) [(if: (history:) contains &quot;Join the caribou&quot;) [You frown and reemerge into the biting winds. The snow melts beneath your paw pads and refreezes quickly, causing chunks of ice to stick to your feet.
+		
+		The small group hardly notices your arrival. Just as you feel the warmth of the structure, the lead hare&#39;s voice is audible. &quot;Two...Three...Go!&quot;
 
-(if: $held_form is &quot;Holven&quot;) [&quot;One of the King&#39;s men come to spy on us?&quot; A ground squirrels seethes. A hare grabs her arm and tugs her backwards. &quot;Sorry, we&#39;re all just cold, ya know? No offense taken or meant, I hope. Heh.&quot; The hare laughs nervously and glances at the others.
+You&#39;re knocked back in a sudden explosion of movement, and a hare takes you to the ground! The fresh snow cushions your fall, but the weight on your chest knocks the air out of you. &quot;Sorry!&quot; the hare quickly says and rolls off of you, then she&#39;s quickly to her feet and joining her brethren.
 
-&quot;Yeah, of course no offense to the mighty Holven,&quot; the ground squirrel rolls her eyes. &quot;Come on, it&#39;s almost time to go back inside anyway.&quot; The ground squirrels leads the apprehensive group away from the structure. 
+You get your hands under you and push youself up. The scene that greets you is chaotic: the snow leopard guard lies pinned to the ground with hares and ground squirrels holding her arms in place, and a group of hares rushes toward {(if: (history:) contains &quot;\&quot;Cyrus?\&quot;&quot;) [Cyrus] (else:) [the black wolf], spear in hand.}
+
+You glance toward the arched wooden gate at the far end of the Yard. A small group of Holven protect {(if: (history:) contains &quot;\&quot;Cyrus?\&quot;&quot;) [Cyrus] (else:) [the black wolf]} as he struggles to unlock it. 
+
+You should take advantage of the chaos.
+
+[[Escape!-&gt;Escape while you can!]]
+
+] 		(else:) [ 
+You approach the group standing huddled beneath the nearest structure. Once you&#39;re underneath, the wind no longer batters your fur and a wave of rejuvenating warmth flows over you. The warmth is quickly countered by the cold response of the group, though.
+
+&quot;One of the King&#39;s men come to spy on us?&quot; A ground squirrel seethes. A hare grabs her arm and tugs her backwards. &quot;Sorry, we&#39;re all just cold, ya know? No offense taken or meant, I hope. Heh.&quot; The hare laughs nervously and glances at the others.
+
+&quot;Yeah, of course no offense to the mighty Holven,&quot; the ground squirrel extends her arms and gives you an exaggerated bow. &quot;Come on, it&#39;s almost time to go back inside anyway.&quot; She leads the apprehensive group away from the structure. 
 
 As soon as they emerge into the open air, the winds batter their fur and they huddle together uncomfortably. They only walk a short distance before they stop and look at you expectantly, as if waiting for you to leave. 
 
 You look around. You can make it as far as the next structure over, now occupied by the caribou and fox.
 
-
-You&#39;ve gained knowledge!
-
-
 [[Join the caribou]]
-(set: $Holven_knowledge_3 to true)]
+(set: $Holven_knowledge_3 to true)
+]
+] (else-if: (($held_form is &quot;Caia&quot;) OR ($held_form is &quot;Lepus&quot;)) AND (((history:) contains all of (a: &quot;Join the hares&quot;, &quot;Join the wolf&quot;)) OR ((history:) contains all of (a: &quot;Join the hares&quot;, &quot;Join the caribou&quot;)) OR ((history:) contains all of (a: &quot;Join the wolf&quot;, &quot;Join the caribou&quot;))))
 
-(if: $held_form is &quot;Holven&quot; AND ((history:) contains &quot;\&quot;Cyrus?\&quot;&quot; OR (history:) contains &quot;\&quot;I just want to stay warm\&quot;&quot;)) [text for returning to the group]
+[You lower your head and walk headlong into the winds toward the smallest shelter in the Yard.
 
-(if: $held_form is &quot;Caia&quot;) [&quot;So what we have to do is sneak up on him...&quot; The hare who was speaking quiets when he notices you.
+The hares and ground squirrels hardly glance as you as you approach. Just as you feel the warmth of the structure, the lead hare&#39;s voice is audible. &quot;Two...three...Go!&quot;
+
+You&#39;re knocked back in a sudden explosion of movement, and a hare takes you to the ground! The fresh snow cushions your fall, but the weight on your chest knocks the air out of you. &quot;Sorry!&quot; the hare quickly says and rolls off of you, then she&#39;s quickly to her feet and joining her brethren.
+
+You get your hands under you and push youself up. The scene that greets you is chaotic: the snow leopard guard lies pinned on the ground with hares and ground squirrels holding her arms in place, and a group of hares rushes toward (if: (history:) contains &quot;\&quot;Cyrus?\&quot;&quot;) [Cyrus] (else:) [the black wolf], spear in hand. 
+
+You should take advantage of the chaos.
+
+[[Escape!-&gt;Time to go!]]
+] (else-if: $held_form is &quot;Caia&quot;) [You trudge through the snow to the smallest structure. You have to duck to allow your antlers to fit underneath, but as soon as you&#39;re under the umbrella-shaped structure, a wave of rejuvenating warmth flows over you.
+
+&quot;So what we have to do is sneak up on him...&quot; The hare who was speaking quiets when he notices you.
 
 &quot;We aren&#39;t going to //actually// break out, just so you know,&quot; a ground squirrel mutters. A hare elbows her and glares hard, but it doesn&#39;t quiet the ground squirrel for long. &quot;What? You know how Caia are! Can&#39;t keep a secret or tell a lie to save their lives.&quot;
 
 [[&quot;What&#39;s this about breaking out?&quot;]]
-[[Remain silent-&gt;Remain silent Yard style]]]
+[[Remain silent-&gt;Remain silent Yard style]]
+] (else-if: $held_form is &quot;Lepus&quot;) [You frown and walk headlong into the wind toward the smallest shelter in the Yard. Once you&#39;re underneath, the wind no longer batters your fur and a wave of rejuvenating warmth flows over you.
 
+&quot;So what we have to do is sneak up on him and hold him down. A few of us may get put on the Chain...or eaten...but you will be remembered valiantly in the Burrows!&quot; 
 
+You stand back and watch an enthusiastic hare motion wildly with his hands. Most of the group looks skeptical, but a few ground squirrels are enraptured. 
 
-STILL NEED RABBIT SECTIONS</tw-passagedata><tw-passagedata pid="81" name="Join the caribou" tags="" position="215.00000000000003,1209.6666666666665" size="100,100">(if: $held_form is &quot;Holven&quot;) [You step away from the shelter and into the blistering winds of the Yard. The fox sees you coming and tries to subtly get the caribou&#39;s attention. 
+[[Speak up]]
+[[Let him continue]]
+]</tw-passagedata><tw-passagedata pid="81" name="Join the caribou" tags="" position="838.3333333333335,1240.8333333333335" size="100,100">(if: $held_form is &quot;Holven&quot;) [You step into the blistering winds of the Yard and cross your arms. Though you try to tuck your fingers away, they&#39;re still bitten by chilled snowflakes that fall from the sky. 
+
+The fox sees you coming and tries to subtly get the caribou&#39;s attention.
 
 The caribou speaks before you can feel the warmth of the structure. &quot;Ah, a Holven! Are you looking for Cyrus, mayhaps? Or would you prefer our shelter?&quot;
 
 [[&quot;Cyrus?&quot;]]
-[[&quot;I just want to stay warm.&quot;]]]
+[[&quot;I just want to stay warm.&quot;]]
+] (else-if: $held_form is &quot;Caia&quot; AND ((history:) contains all of (a: &quot;Join the caribou&quot;, &quot;Join the wolf&quot;) OR (history:) contains all of (a: &quot;Join the caribou&quot;, &quot;Join the hares&quot;) OR (history:) contains &quot;\&quot;No idea.\&quot;&quot;)) [You fight the winds once again as you make your way back to the middle shelter. 
+  
+&quot;What are you doing back here, eh?&quot; The fox huffs.
+  
+&quot;Yenva! You can share, you know. We don&#39;t have to be the only ones-&quot; The caribou starts.
+  
+&quot;I don&#39;t even want //you// he-&quot; 
+  
+  (text-style: &quot;bold&quot;) [&quot;Stop that!&quot;] a screeching voice cuts through the wind and bounces through the Yard. You, the caribou, and the fox all look - the snow leopard guard lies writhing and yowling on the ground, held in place by a cohort of hares! (if: (history:) contains any of (a: &quot;\&quot;I have a key too.\&quot;&quot;, &quot;\&quot;You mean a key like this?\&quot;&quot;)) [A ground squirrel wrenches the spear from her grip and searches wildly for you - and then spots you.
 
-STILL NEED RABBIT AND CARIBOU SECTIONS</tw-passagedata><tw-passagedata pid="82" name="Join the wolf" tags="" position="393.3333333333333,1079.6666666666665" size="100,100">(if: $held_form is &quot;Holven&quot;) [You journey across the yard and join the wolf underneath the largest structure in the Yard. He looks at you with a measured gaze, and you can feel the air of authority floating about him. 
+&quot;There!&quot; he yells.
+
+Suddenly a battle cry erupts as the hares abandon the guard and rush toward you, desperate for a key.] (else:) [ A ground squirrel wrenches the spear from her grip and searches wildly for the wolf - and then spots him.
+
+&quot;There!&quot; he yells.
+
+Suddenly the guard lies forgotten on the ground and the group sprints toward the wolf, desperate for a key.]
+
+[[Time to go!]]
+
+] 
+(else-if: $held_form is &quot;Caia&quot; AND ((history:) contains &quot;Remain silent Yard style&quot;)) [You step into the blistering winds of the Yard and cross your arms. Though you try to tuck your fingers away, they&#39;re still bitten by chilled snowflakes that fall from the sky. 
+
+The fox groans as you approach, while the caribou greets you happily. &quot;Ah, another Caia! It&#39;s rare to see our kind in here, friend.&quot;
+
+[[Look at the caribou]]
+[[Look at the fox]]
+[[&quot;Why is it rare to see other Caia?&quot;]]
+  ] (else-if: $held_form is &quot;Caia&quot; AND (((history:) contains all of (a: &quot;Join the hares&quot;, &quot;Join the wolf&quot;)) OR ((history:) contains any of (a: &quot;\&quot;How do we get the key?\&quot;&quot;, &quot;\&quot;You mean a key like this?\&quot;&quot;)))) [You quickly make your way across the Yard to the next closest structure, hoping the guard didn&#39;t notice you. 
+
+The fox groans as you approach, while the caribou greets you happily. &quot;Ah, another Caia! It&#39;s rare to see our kind in here, friend.&quot;
+
+[[Look at the caribou]]
+ [[Look at the fox]]
+ [[&quot;Why is it rare to see other Caia?&quot;]]
+ ] (else-if: $held_form is &quot;Caia&quot;) [You slowly make your way across the Yard, fighting the strong winds. 
+ 
+ The fox groans as you approach, while the caribou greets you happily. &quot;Ah, another Caia! It&#39;s rare to see our kind in here, friend.&quot;
+
+  [[Look at the caribou]]
+  [[Look at the fox]]
+  [[&quot;Why is it rare to see other Caia?&quot;]]
+  ] (else-if: (history:) contains all of (a: &quot;Join the caribou&quot;, &quot;Join the wolf&quot;) OR (history:) contains all of (a: &quot;Join the caribou&quot;, &quot;Join the hares&quot;) OR (history:) contains &quot;\&quot;No idea.\&quot;&quot;) [You fight the winds once again as you make your way back to the middle shelter. 
+  
+&quot;What are you doing back here, eh?&quot; The fox huffs.
+  
+&quot;Yenva! You can share, you know. We don&#39;t have to be the only ones-&quot; The caribou starts.
+  
+&quot;I don&#39;t even want //you// he-&quot; 
+  
+  (text-style: &quot;bold&quot;) [&quot;Stop that!&quot;] a screeching voice cuts through the wind and bounces through the Yard. You, the caribou, and the fox all look - the snow leopard guard lies writhing and yowling on the ground, held in place by a cohort of hares! (if: (history:) contains any of (a: &quot;\&quot;Let Benba and Shiri do it.\&quot;&quot;, &quot;\&quot;You mean a key like this?\&quot;&quot;)) [A ground squirrel wrenches the spear from her grip and searches wildly for the wolf - and then spots him.
+
+&quot;Get him!&quot; he yells.
+
+Suddenly a battle cry erupts as the hares abandon the guard and rush toward the wolf, desperate for a key.] (else:) [A ground squirrel wrenches the spear from her grip and searches wildly for you - and then he spots you.
+
+&quot;There!&quot; he yells.
+
+Suddenly the guard lies forgotten on the ground and the group sprints toward you, desperate for a key.]
+
+[[Time to go!]]
+
+] (else-if: $held_form is &quot;Lepus&quot;) [The winds seem to to bite at the edges of your ears as you journey toward the middle shelter. (if: (history:) contains &quot;\&quot;You mean a key like this?\&quot;&quot;) [You keep a quick pace though, hoping the guard didn&#39;t see you.]
+  
+  The fox groans as you approach, while the caribou greets you happily. &quot;Ah, yet another Lepus! You wouldn&#39;t happen to know what all the commotion is over there, would you?&quot; the caribou motions to the group of hares and ground squirrels. (if: (history:) contains &quot;\&quot;Let Benba and Shiri do it.\&quot;&quot; OR &quot;\&quot;I&#39;ll do it.\&quot;&quot;) [You notice Benba, Shiri, and the lead hare glancing over their shoulders at you.] 
+
+\(if: (history:) contains &quot;Join the hares&quot;) [
+  [[&quot;They&#39;re planning an escape.&quot;]]\
+] 
+  [[&quot;No idea.&quot;]]
+  ]</tw-passagedata><tw-passagedata pid="82" name="Join the wolf" tags="" position="1381.6666666666667,1035.8333333333333" size="100,100">(if: $held_form is &quot;Holven&quot;) [You journey through the snow and join the wolf underneath the largest structure in the Yard. He looks at you with a measured gaze, and you can feel the air of authority floating about him. 
 
 &quot;You must be new here.&quot; He crosses his arms and looks you up and down. You notice something shiny hidden in his pocket. &quot;Name&#39;s Cyrus.&quot;
 
-[[&quot;Why is everyone so afraid of me?&quot;]]
+[[&quot;Why is everyone so afraid?&quot;]]
 [[&quot;What did the other Holven give you?&quot;]]
-[[&quot;Can you help me escape?&quot;-&gt;Can Cyrus help me escape?]]]</tw-passagedata><tw-passagedata pid="83" name="&quot;Cyrus?&quot;" tags="" position="258.3333333333333,1331.333333333333" size="100,100">(if: $held_form is &quot;Holven&quot;) [&quot;Cyrus?&quot; you ask, joining them underneath the shelter.
+[[&quot;Can you help me escape?&quot;-&gt;Can Cyrus help me escape?]]
+] (else-if: $held_form is &quot;Caia&quot; AND ((history:) contains &quot;\&quot;You mean a key like this?\&quot;&quot;)) [You quickly make your way across the Yard to the furthest structure you can reach, hoping the guard didn&#39;t notice you. The wolf watches you with a measured gaze as you approach, and you can feel the air of authority floating about him.
 
-The fox shakes his head and limps out into the snow mumbling to himself. &quot;Better to freeze than to upset &#39;em.&quot;
+&quot;What&#39;s all that about?&quot; He throws his chin up and motions to the snow leopard talking to the hares and ground squirrels.
 
-The caribou looks after the fox with concern. &quot;Cyrus would be your fellow Holven over there,&quot; he motions to the lone wolf. &quot;You must be new here, but ah...I really must be helping my acquaintance.&quot; The caribou nods his head politely and ducks out from the structure, leaving you alone once more. 
+[[&quot;I don&#39;t know.&quot;]]
+[[&quot;They know you&#39;re breaking out.&quot;]]
+] (else-if: $held_form is &quot;Caia&quot; AND ((history:) contains any of (a: &quot;Let him examine the key&quot;, &quot;Keep it&quot;))) [You shiver as you leave the shelter and journey across the Yard once more. 
 
-You glance toward Cyrus. He is making no effort to hide that he is watching you. You measure the distance with your eyes. You could make it that far. You also look back to the group you&#39;ve just left - they&#39;re huddled once more under the shelter chattering enthusiastically.
+When you near the wolf you can see him watching you with a measured gaze and feel the air of authority floating about him. 
 
-[[Join Cyrus-&gt;Join the wolf]]
-[[Rejoin the rabbits and ground squirrels-&gt;Join the rabbits and ground squirrels]]]</tw-passagedata><tw-passagedata pid="84" name="&quot;I just want to stay warm.&quot;" tags="" position="373.33333333333337,1251.3333333333333" size="100,100">(if: $held_form is &quot;Holven&quot;) [&quot;I just want to stay warm,&quot; you say with a smile, joining the duo underneath the structure. You rub your shivering arms for emphasis.
+[[&quot;I hear you&#39;re going to break out.&quot;]]
+[[Politely introduce yourself]]
+] (else-if: $held_form is &quot;Caia&quot; OR &quot;Lepus&quot;) [You quickly make your way across the Yard to the furthest structure you can reach, trying to keep your fingers from getting frostbite as you go. 
 
-The fox shakes his head and limps out into the snow mumbling to himself. &quot;Better to freeze than to upset &#39;em.&quot;
+The wolf watches with a measured gaze as you approach, and you can feel the air of authority floating about him. You stop short of ducking into the shelter, deciding what to say. 
 
-The caribou looks after the fox with concern. &quot;I really must be helping my acquaintance. You may have our shelter, though.&quot; The caribou nods his head politely and ducks out from the structure, leaving you alone once more. 
+[[Politely introduce yourself]]
+[[&quot;What did the other wolf give you?&quot;]]
+]</tw-passagedata><tw-passagedata pid="83" name="Escape while you can!" tags="" position="944.9999999999998,1812.9999999999998" size="100,100">You move toward the gate quickly, your pace only hindered by your paws sinking slightly into the snow. 
 
-You glance toward the lone wolf. He is making no effort to hide that he is watching you. You measure the distance with your eyes. You could make it that far. You also look back to the group you&#39;ve just left - they&#39;re huddled once more under the shelter chattering enthusiastically.
+Very quickly the open gate is noticed, and a steady stream of creatures begin pouring through it. You narrowly dodge the snow leopard guard, now standing and furious. 
 
-[[Join Cyrus-&gt;Join the wolf]]
-[[Rejoin the rabbits and ground squirrels-&gt;Join the rabbits and ground squirrels]]]</tw-passagedata><tw-passagedata pid="85" name="&quot;Why is everyone so afraid of me?&quot;" tags="" position="533.3333333333334,1262.9999999999995" size="100,100">(if: $held_form is &quot;Holven&quot;) [&quot;Why is everyone so afraid of me?&quot;
+You emerge into the open air. To the left you can see a hint of ice-covered trees flickering through the snow-mists, straight ahead looks to be the edge of a cliff, and to the right is nothing but a wall of snow, broken only by the line of the wolf&#39;s pawprints. 
+(set: $max_cold_resistance to 1) (set: $current_cold_resistance to 1)
+You currently have $current_cold_resistance points of cold resistance.
 
-&quot;You must not be from around here,&quot; Cyrus says with some skepticism. &quot;You&#39;re a Holven, friend. If we were on the outside, we could do almost anything we pleased.&quot; He smiles. &quot;Keyword there being //almost//. I take it you found that out the hard way.&quot;
+[[Move to the cliff (costs 1 cold resistance)-&gt;Move to the cliff]]
+[[Move to the trees (costs 3 cold resistance)-&gt;Move to the trees]]
+[[Follow the tracks (costs 3 cold resistance)-&gt;Follow the tracks]]</tw-passagedata><tw-passagedata pid="84" name="Time to go!" tags="" position="695.0000000000001,1819.6666666666663" size="100,100">{(if: $held_form is &quot;Caia&quot;) [You take off toward the gate but struggle to move quickly as your hoofed-feet sink deep into the snow.] (else-if: $held_form is &quot;Holven&quot;) [You take off toward the gate but find it difficult as your paws sink slightly into the snow.] (else-if: $held_form is &quot;Lepus&quot;) [You take off toward the gate, moving quickly atop the snow.]}
 
-(unless: (history:) contains &quot;Can Cyrus help me escape?&quot;) [[[&quot;Can you help me escape?&quot;-&gt;Can Cyrus help me escape?]]]
-(if: (history:) contains &quot;Can Cyrus help me escape?&quot;) [[&quot;How far can my status get me?&quot;]]
-(unless: (history:) contains &quot;\&quot;What did the other Holven give you?\&quot;&quot;) [[&quot;What did the other Holven give you?&quot;]]]</tw-passagedata><tw-passagedata pid="86" name="&quot;What did the other Holven give you?&quot;" tags="" position="735,1069.6666666666665" size="100,100">(if: $held_form is &quot;Holven&quot;) [&quot;What did the other Holven give you?&quot; you ask, motioning toward Cyrus&#39; pocket. 
+You hear the sounds of chaos descend behind you as you reach the gate. (if: (history:) contains any of (a: &quot;\&quot;You mean a key like this?\&quot;&quot;, &quot;\&quot;I have a key too.\&quot;&quot;, &quot;Caribou Key&quot;)) [You fumble for the key and try to unlock the oversized padlock, but a black hand knocks you aside. 
 
-Cyrus bristles, but then regains his composure and slips his hands inside his pockets, obscuring the item from view. &quot;First time in Kha&#39;bad, eh? If you want to make it around here, don&#39;t ask questions, especially to people like me.&quot;
+You look over - the lone wolf stares back at you, holding up a copper key identical to yours. &quot;Where did you get that?&quot; he growls.
 
-(unless: (history:) contains &quot;\&quot;Why is everyone so afraid of me?\&quot;&quot;) [[&quot;Why is everyone so afraid of me?&quot;]]
-(unless: (history:) contains &quot;Can Cyrus help me escape?&quot;) [[&quot;Can you help me escape?&quot;-&gt;Can Cyrus help me escape?]]
-(if: (history:) contains &quot;Can Cyrus help me escape?&quot;) [[&quot;How far can my status get me?&quot;]]]</tw-passagedata><tw-passagedata pid="87" name="Can Cyrus help me escape?" tags="" position="588.3333333333331,1139.6666666666663" size="100,100">(if: $held_form is &quot;Holven&quot;)[&quot;Can you help me escape?&quot; you ask. 
+He glances over his shoulder. Behind you, the Yard is breaking into madness. Guards try to subdue the rioting hares and ground squirrels, but they&#39;re quickly overwhelmed. A white hare shimmies away from a bear and rushes toward you. You don&#39;t have much time. 
 
-Cyrus raises his eyebrows and peels his lips back in a snarling smile. &quot;That&#39;s pretty forward, Newcomer. You think just becaus you&#39;re one of us you&#39;re going to get special treatment? Status only gets you so far in here.&quot; He shakes his head and his smile fades a bit. It seems his words ring true for him as well.
+The wolf shoves you out of the way and fumbles with the lock. Together you push the door open, fighting against the fallen snow piled against the bottom.
 
-[[&quot;How far can my status get me?&quot;]]
-(unless: (history:) contains &quot;\&quot;Why is everyone so afraid of me?\&quot;&quot;) [[&quot;Why is everyone so afraid of me?&quot;]]
-(unless: (history:) contains &quot;\&quot;What did the other Holven give you?\&quot;&quot;) [[&quot;What did the other Holven give you?&quot;]]]</tw-passagedata><tw-passagedata pid="88" name="&quot;How far can my status get me?&quot;" tags="" position="760.0000000000001,1219.6666666666665" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="89" name="&quot;What&#39;s this about breaking out?&quot;" tags="" position="0,1391.3333333333333" size="100,100">(if: $held_form is &quot;Caia&quot;) [&quot;What&#39;s this about breaking out?&quot;
+&quot;Come to Sypha&#39;s Cavern!&quot; The wolf yells, and then he&#39;s gone, vanishing into the blizzard raging across the Snowfield.
+(set: $QuestforSyphasCavern_1 to true)](else:) [You&#39;re roughly pushed to the side by the black wolf. You watch him fumble with the key, then glance over your shoulder. Behind you, the Yard is breaking into madness. Guards try to subdue the rioting hares and ground squirrels, but they&#39;re quickly overwhelmed. A white hare shimmies away from a bear and rushes toward you. The wolf doesn&#39;t have much time. 
+
+&quot;Come on!&quot; The wolf shouts, then puts his shoulder to the door. Together you push the door open, fighting against the fallen snow piled against the bottom. Once it&#39;s partially open he slips out the crack and vanishes. You shimmy out behind him.]
+
+You emerge into the open air. To the left you can see a hint of ice-covered trees flickering through the snow-mists, straight ahead looks to be the edge of a cliff, and to the right is nothing but a wall of snow, broken only by the line of the wolf&#39;s pawprints. 
+{(if: $held_form is &quot;Caia&quot;) [(set: $max_cold_resistance to 3) (set: $current_cold_resistance to 3)] (else-if: $held_form is &quot;Holven&quot;) [(set: $max_cold_resistance to 1) (set: $current_cold_resistance to 1)] (else-if: $held_form is &quot;Lepus&quot;) [(set: $max_cold_resistance to 2) (set: $current_cold_resistance to 2)]}
+You currently have $current_cold_resistance points of cold resistance.
+
+[[Move to the cliff (costs 1 cold resistance-&gt;Move to the cliff]]
+[[Move to the trees (costs 3 cold resistance)-&gt;Move to the trees]]
+[[Follow the tracks (costs 3 cold resistance)-&gt;Follow the tracks]]</tw-passagedata><tw-passagedata pid="85" name="&quot;What&#39;s this about breaking out?&quot;" tags="" position="266.66666666666663,1336.3333333333328" size="100,100">&quot;What&#39;s this about breaking out?&quot;
 
 The group stares at you in silence. &quot;Not worth it...&quot; one of the hares mumbles after a moment. 
 
 Then: &quot;The Holven are planning on breaking out today. Cyrus has the key. We need to steal it from him!&quot; one of the ground squirrels blurts out and points toward {(if: (history:) contains &quot;Join the wolf&quot;) [Cyrus.] (else:) [the lone wolf.]} Most of the group look away in shame while a few others pummel and smack him. &quot;I swear it&#39;s impossible to keep you lot alive,&quot; a hare groans.
 
-{(if: $copperkey is 1) [
-[[&quot;You mean a key like this?&quot;]]
-] (else:) [
-[[&quot;How do we get the key?&quot;]]
-]}
-]</tw-passagedata><tw-passagedata pid="90" name="Remain silent Yard style" tags="" position="120,1391.3333333333333" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="91" name="&quot;You mean a key like this?&quot;" tags="" position="0,1541.3333333333333" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="92" name="&quot;How do we get the key?&quot;" tags="" position="120,1541.3333333333333" size="100,100">Double-click this passage to edit it.</tw-passagedata></tw-storydata>
+
+\(if: (history:) contains any of (a: &quot;Let him examine the key&quot;, &quot;Keep it&quot;)) [
+	[[&quot;I have a key too.&quot;]]
+	[[Remain silent-&gt;Remain silent v3]]\
+] 
+\(else-if: $copperkey is 1) [
+	[[&quot;You mean a key like this?&quot;]]\
+] 
+\(else:) [
+	[[&quot;How do we get the key?&quot;]]\
+]</tw-passagedata><tw-passagedata pid="86" name="Remain silent Yard style" tags="" position="295,1217.9999999999995" size="100,100">You give the group a skeptical look. 
+
+&quot;Come on, we need to go somewhere //else// to discuss this,&quot; a hare mutters. He leads the apprehensive group away from the structure and into the howling winds of the Yard. 
+
+As soon as they emerge they hunch over and huddle together uncomfortably. They only walk a short distance before they stop and look at you with distrust, waiting for you to leave. 
+
+(if: (history:) contains any of (a: &quot;Let him examine the key&quot;, &quot;Keep it&quot;)) [You look around. The guards seem on edge, disliking the ruckus caused by the hares and ground squirrels, and so too does the lone black wolf. He stands with his arms crossed and his eyes slowly sweeping the Yard. 
+
+[[Use your key to leave]] 
+[[Join the wolf]]
+] (else-if: (history:) contains &quot;Join the wolf&quot;) [You look around. The caribou and fox have made it to the nearest structure and stand together shivering. The caribou talks with animated hands while the fox stares blankly ahead.
+
+[[Join the caribou]] 
+] (else-if: (history:) contains &quot;Caribou How Key&quot;) [You look around. The wolf stands beneath the largest shelter in the Yard with his arms crossed and his gaze surveying the area.
+
+[[Join the wolf]]
+] (else:) [You look around. The caribou and fox have made it to the nearest structure and stand together shivering. The caribou talks with animated hands while the fox stares blankly ahead.
+
+Further down is the wolf, surveying the Yard with his arms crossed.
+
+[[Join the caribou]] 
+[[Join the wolf]]
+]</tw-passagedata><tw-passagedata pid="87" name="Speak up" tags="" position="21.66666666666663,1439.6666666666663" size="100,100">&quot;Hello there,&quot; you step forward and nod in greeting. &quot;What&#39;s this about holding someone down?&quot;
+
+&quot;Hush, hush!&quot; The hare leaps forward and covers your mouth with his hand. The rest of the group watch nervously. You wrench the hare&#39;s hand away from your face and narrow your eyes, but the hare doesn&#39;t seem fased. 
+
+&quot;We&#39;re getting Cyrus&#39; key and escaping, my fellow Lepus. His Pack is breaking him out, but we&#39;re not going to let that happen. //We&#39;re// going to be the ones breaking out today.&quot;
+
+\(if: $copperkey is 1) [
+	[[&quot;You mean a key like this?&quot;]]\
+]
+[[&quot;What&#39;s the plan?&quot;]]
+[[&quot;Can I help?&quot;-&gt;&quot;I&#39;ll do it.&quot;]]</tw-passagedata><tw-passagedata pid="88" name="Let him continue" tags="" position="126.66666666666664,1349.6666666666663" size="100,100">You stand quietly and let the hare continue. &quot;Benba and Shiri will be distractions. The rest of you will tackle him and hold him down while I grab the key, and then we&#39;ll all run for the gate!
+
+Shiri, a small-statured ground squirrel, nods confidently. &quot;Right! We&#39;ll distract him with the weather while you guys pounce!&quot; Beside her stands Benba, a twitchy hare. He looks nervous. &quot;...And then we distract the guards while you guys unlock the gate,&quot; he mumbles.
+
+The first hare nods approvingly. &quot;So the Holven are fast, but we&#39;re faster. I think we can do it; any questions?&quot;
+
+[[&quot;Who are we tackling?&quot;]]</tw-passagedata><tw-passagedata pid="89" name="&quot;Cyrus?&quot;" tags="" position="973.3333333333333,1074.1666666666665" size="100,100">&quot;Cyrus?&quot; you ask, joining them underneath the shelter.
+
+The fox shakes his head and limps out into the snow mumbling to himself. &quot;Better to freeze than to upset &#39;em.&quot;
+
+The caribou looks after the fox with concern. &quot;Cyrus would be your fellow Holven over there,&quot; he motions to the lone wolf. &quot;You must be new here, but ah...I really must be helping my acquaintance.&quot; The caribou nods his head politely and ducks out from the structure, leaving you alone once more. 
+
+You glance toward Cyrus. He makes no effort to hide that he is watching you. You measure the distance with your eyes; you could make it that far. You also look back to the group you&#39;ve just left - they&#39;re huddled once more under the shelter chattering enthusiastically.
+
+[[Join Cyrus-&gt;Join the wolf]]
+[[Rejoin the hares-&gt;Join the hares]]</tw-passagedata><tw-passagedata pid="90" name="&quot;I just want to stay warm.&quot;" tags="" position="818.3333333333335,1109.1666666666667" size="100,100">&quot;I just want to stay warm,&quot; you say with a smile, joining the duo underneath the structure. You rub your shivering arms for emphasis.
+
+The fox shakes his head and limps out into the snow mumbling to himself. &quot;Better to freeze than to upset &#39;em.&quot;
+
+The caribou looks after the fox with concern. &quot;I really must be helping my acquaintance. You may have our shelter, though.&quot; The caribou nods his head politely and ducks out from the structure, leaving you alone once more. 
+
+You glance toward the lone wolf. He is making no effort to hide that he is watching you. You measure the distance with your eyes; you could make it that far. You also look back to the group you&#39;ve just left - they&#39;re huddled once more under the shelter chattering enthusiastically.
+
+[[Join the wolf]]
+[[Rejoin the hares-&gt;Join the hares]]</tw-passagedata><tw-passagedata pid="91" name="Look at the caribou" tags="" position="933.3333333333335,1410.8333333333333" size="100,100">You look at the caribou. He&#39;s dressed in clean rags and holds a pleasant smile on his face. Though he looks young, his antlers are broken and brittle.
+
+[[&quot;What happened to your antlers?&quot;]]
+\(unless: (history:) contains &quot;\&quot;Why is it rare?\&quot;&quot;) [
+	[[&quot;Why is it rare to see other Caia?&quot;]]\
+]
+</tw-passagedata><tw-passagedata pid="92" name="Look at the fox" tags="" position="1010,1304.1666666666667" size="100,100">You look at the fox. His fur is greying and his clothes are ragged, as if he&#39;s lived in them for most of his life. 
+
+He sways to keep his balance and lowers his left foot to the snow, but winces and lifts it once more. He glances periodically at the wolf with a nervous demeanor. 
+
+[[&quot;What happened to your leg?&quot;]]
+\(unless: (history:) contains &quot;\&quot;Why is it rare?\&quot;&quot;) [
+	[[&quot;Why is it rare to see other Caia?&quot;]]\
+]</tw-passagedata><tw-passagedata pid="93" name="&quot;Why is it rare to see other Caia?&quot;" tags="" position="1008.3333333333334,1194.1666666666665" size="100,100">(if: (history:) contains &quot;Remain silent Yard style&quot;) [&quot;Why is it rare to see other Caia?&quot; you ask. The word feels foreign on your tongue.
+
+The caribou gives you a sympathetic smile. &quot;Dear me, one of us must be terribly confused. During my stay I have not seen many of our kind, and yet I may just not remember! Perhaps there are //many// of us, but no one can remember!&quot; The caribou leans closer, peering at your curiously. &quot;Can you?&quot;
+
+&quot;Don&#39;t answer &#39;em,&quot; the fox grumbles. &quot;He&#39;ll forget it in a few minutes anyway. I gave up talking to him years ago.&quot;
+
+[[&quot;Why can&#39;t you remember?&quot;]]
+[[&quot;How long have you been in here?&quot;]]
+] (else-if: (history:) contains all of (a: &quot;Join the wolf&quot;, &quot;Join the hares&quot;)) [&quot;Why is it rare-&quot; you start. 
+
+(text-style: &quot;bold&quot;) [&quot;Stop that!&quot;] a screeching voice cuts through the wind and bounces through the Yard. You, the caribou, and fox all look - the snow leopard guard lies writhing and yowling on the ground, held in place by a cohort of hares! A ground squirrel wrenches the spear from her grip and searches wildly for (if: (history:) contains &quot;\&quot;You mean a key like this?\&quot;&quot;) [you - and then he spots you.] (else:) [the wolf - and then spots him.]
+
+&quot;There!&quot; he yells.
+
+Suddenly the guard lies forgotten on the ground and the group descends upon (if: (history:) contains &quot;\&quot;You mean a key like this?\&quot;&quot;) [you,] (else:) [the wolf,] desperate for the key.
+
+
+[[Time to go!]]
+] (else:) [&quot;Why is it rare to see other Caia?&quot; you ask. The word feels foreign on your tongue.
+
+The caribou gives you a sympathetic smile. &quot;Dear me, one of us must be terribly confused. During my stay I have not seen many of our kind, and yet I may just not remember! Perhaps there are //many// of us, but no one can remember!&quot; The caribou leans closer, peering at your curiously. &quot;Can you?&quot;
+
+&quot;Don&#39;t answer &#39;em,&quot; the fox grumbles. &quot;He&#39;ll forget it in a few minutes anyway. I gave up talking to him years ago.&quot;
+
+[[&quot;Why can&#39;t you remember?&quot;]]
+[[&quot;How long have you been in here?&quot;]]
+]</tw-passagedata><tw-passagedata pid="94" name="&quot;They&#39;re planning an escape.&quot;" tags="" position="703.3333333333333,1339.166666666667" size="100,100">(if: (((history:) contains &quot;Join the wolf&quot;) AND (history:) contains any of (a: &quot;\&quot;I&#39;ll do it.\&quot;&quot;, &quot;\&quot;Let Benba and Shiri do it.\&quot;&quot;, &quot;\&quot;You mean a key like this?\&quot;&quot;))) [&quot;They&#39;re planning an esca-&quot;
+
+(text-style: &quot;bold&quot;) [&quot;Stop that!&quot;] a screeching voice cuts through the wind and bounces through the Yard. You, the caribou, and the fox all look - the snow leopard guard lies writhing and yowling on the ground, held in place by a cohort of hares! A ground squirrel wrenches the spear from her grip and searches wildly for (if: (history:) contains any of (a: &quot;\&quot;You mean a key like this?\&quot;&quot;, &quot;\&quot;I have a key too.\&quot;&quot;)) [you - and then spots you.] (else:) [the wolf - and then spots him.]
+
+&quot;There!&quot; he yells.
+
+Suddenly the guard lies forgotten on the ground and the group sprints toward (if: (history:) contains any of (a: &quot;\&quot;You mean a key like this?\&quot;&quot;, &quot;\&quot;I have a key too.\&quot;&quot;)) [you,] (else:) [the wolf,] desperate for a key.
+
+[[Time to go!]]
+] (else-if: (history:) contains any of (a: &quot;\&quot;I&#39;ll do it.\&quot;&quot;, &quot;\&quot;You mean a key like this?\&quot;&quot;)) [&quot;They&#39;re planning an escape. They want to steal the key from that Holven over there,&quot; you say, motioning discretely to the lone black wolf. The quietly-chattering group seems to have attracted the attention of the wolf and many of the guards.
+
+&quot;And they got you to agree to all that?&quot; the fox asks with wide eyes. He limps towards you and places a hand on your shoulder. &quot;Don&#39;t get caught up in the chaos. Talk to Cyrus if you must, but don&#39;t get yourself killed. It isn&#39;t that bad in here, really.&quot;
+
+[[Join the wolf]]
+\(if: $copperkey is 1) [
+	[[Use your key to leave]]\
+]
+]  (else-if: (history:) contains &quot;\&quot;Let Benba and Shiri do it.\&quot;&quot;) [&quot;They&#39;re planning an escape. I don&#39;t know much more than that,&quot; you say. 
+
+The fox&#39;s eyes light up. &quot;Really now?&quot; He limps toward you and places his hand on your shoulder. &quot;Why don&#39;t you go see what their plans are? There&#39;s about to be some chaos around here. It&#39;d do you some good to know what&#39;s happening.&quot;
+
+[[Join the wolf]]
+[[Rejoin the hares-&gt;Join the hares]]
+] (else:) [&quot;They&#39;re planning an escape. I don&#39;t know much more than that,&quot; you say. 
+
+The fox&#39;s eyes light up. &quot;Really now?&quot; He limps toward you and places his hand on your shoulder. &quot;Why don&#39;t you go see what their plans are? There&#39;s about to be some chaos around here. It&#39;d do you some good to know what&#39;s happening.&quot;
+
+[[Join the wolf]]
+[[Rejoin the hares-&gt;Join the hares]]
+]</tw-passagedata><tw-passagedata pid="95" name="&quot;No idea.&quot;" tags="" position="823.3333333333331,1395.8333333333335" size="100,100">(if: (((history:) contains &quot;Join the wolf&quot;) AND (history:) contains any of (a: &quot;\&quot;I&#39;ll do it.\&quot;&quot;, &quot;\&quot;Let Benba and Shiri do it.\&quot;&quot;, &quot;\&quot;You mean a key like this?\&quot;&quot;)))[&quot;I&#39;m not sure. I left bef-&quot;
+
+(text-style: &quot;bold&quot;) [&quot;Stop that!&quot;] a screeching voice cuts through the wind and bounces through the Yard. You, the caribou, and the fox all look - the snow leopard guard lies writhing and yowling on the ground, held in place by a cohort of hares! A ground squirrel wrenches the spear from her grip and searches wildly for (if: (history:) contains any of (a: &quot;\&quot;You mean a key like this?\&quot;&quot;, &quot;\&quot;I have a key too.\&quot;&quot;)) [you - and then spots you.] (else:) [the wolf - and then spots him.]
+
+&quot;There!&quot; he yells.
+
+Suddenly the guard lies forgotten on the ground and the group sprints toward the (if: (history:) contains any of (a: &quot;\&quot;You mean a key like this?\&quot;&quot;, &quot;\&quot;I have a key too.\&quot;&quot;)) [you,] (else:) [the wolf,] desperate for a key.
+
+[[Time to go!]]
+] (else-if: $held_form is &quot;Lepus&quot; AND ((history:) contains any of (a: &quot;\&quot;I&#39;ll do it.\&quot;&quot;, &quot;\&quot;You mean a key like this?\&quot;&quot;, &quot;\&quot;Let Benba and Shiri do it.\&quot;&quot;))) [&quot;I&#39;m not sure,&quot; you say.
+
+&quot;Well why don&#39;t you go find out? the fox grumbles. &quot;They&#39;re messin&#39; up everyone&#39;s time out here, and soon enough the guards are going to shut them up. Last thing we need are mad guards.&quot;
+
+\(unless: (history:) contains any of (a: &quot;\&quot;Let Benba and Shiri do it.\&quot;&quot;, &quot;\&quot;I&#39;ll do it.\&quot;&quot;, &quot;\&quot;You mean a key like this?\&quot;&quot;)) [
+	[[Join the hares]]\
+] 
+\(if: (history:) contains &quot;Join the hares&quot;) [
+	[[Rejoin the hares-&gt;Join the hares]]\
+] 
+[[Join the wolf]]
+\(if: ($copperkey is 1) AND (history:) contains &quot;\&quot;You mean a key like this?\&quot;&quot;) [
+	[[Use your key to leave]]\
+]
+] (else:) [&quot;I&#39;m not sure,&quot; you say.
+
+&quot;Well why don&#39;t you go find out? the fox grumbles. &quot;They&#39;re messin&#39; up everyone&#39;s time out here, and soon enough the guards are going to shut them up. Last thing we need are mad guards.&quot;
+
+You nod and step to the edge of the shelter, looking around. The group of hares and ground squirrels still chatter away, seemingly oblivious to the few guards who watch them. In the other direction you see the wolf, standing with his arms crossed and surveying the Yard carefully.
+
+[[Join the hares]]
+[[Join the wolf]]
+]</tw-passagedata><tw-passagedata pid="96" name="&quot;Why is everyone so afraid?&quot;" tags="" position="1675,1055.8333333333335" size="100,100">&quot;Why is everyone so afraid?&quot;
+
+&quot;You must not be from around here,&quot; Cyrus says with some skepticism. &quot;You&#39;re a Holven, friend. If we were on the outside, we could do almost anything we pleased.&quot; He smiles. &quot;Keyword there being //almost//. I take it you found that out the hard way.&quot;
+
+\(unless: (history:) contains &quot;Can Cyrus help me escape?&quot;) [
+	[[&quot;Can you help me escape?&quot;-&gt;Can Cyrus help me escape?]]\
+]
+\(unless: (history:) contains &quot;\&quot;What did the other Holven give you?\&quot;&quot;) [
+	[[&quot;What did the other Holven give you?&quot;]]\
+]
+\(if: (history:) contains &quot;Can Cyrus help me escape?&quot;) [
+	[[&quot;How far can my status get me?&quot;]]\
+]</tw-passagedata><tw-passagedata pid="97" name="&quot;What did the other Holven give you?&quot;" tags="" position="1568.3333333333337,1122.5" size="100,100">&quot;What did the other Holven give you?&quot; you ask, motioning toward Cyrus&#39; pocket. 
+
+Cyrus frowns and slips his hands inside his pockets, obscuring the item from view. &quot;First time in Kha&#39;bad, eh? If you want to make it around here, don&#39;t ask questions like that, especially to people like me.&quot;
+
+\(unless: (history:) contains &quot;\&quot;Why is everyone so afraid?\&quot;&quot;) [
+	[[&quot;Why is everyone so afraid?&quot;]]\
+]
+\(unless: (history:) contains &quot;Can Cyrus help me escape?&quot;) [
+	[[&quot;Can you help me escape?&quot;-&gt;Can Cyrus help me escape?]]\
+]
+\(if: (history:) contains &quot;Can Cyrus help me escape?&quot;) [
+	[[&quot;How far can my status get me?&quot;]]\
+]
+
+(set: $curious to it +1)</tw-passagedata><tw-passagedata pid="98" name="Can Cyrus help me escape?" tags="" position="1536.666666666667,992.3333333333338" size="100,100">&quot;Can you help me escape?&quot; you ask. 
+
+Cyrus raises his eyebrows and peels his lips back in a snarling smile. &quot;That&#39;s pretty forward, Newcomer. You think just because you&#39;re one of us you&#39;re going to get special treatment? Status only gets you so far in here.&quot; He shakes his head and his smile fades a bit. It seems his words ring true for him as well.
+
+[[&quot;How far can my status get me?&quot;]]
+\(unless: (history:) contains &quot;\&quot;Why is everyone so afraid?\&quot;&quot;) [
+[[&quot;Why is everyone so afraid?&quot;]]\
+]
+\(unless: (history:) contains &quot;\&quot;What did the other Holven give you?\&quot;&quot;) [
+[[&quot;What did the other Holven give you?&quot;]]\
+]</tw-passagedata><tw-passagedata pid="99" name="&quot;I don&#39;t know.&quot;" tags="" position="1315,1149.1666666666665" size="100,100">&quot;I don&#39;t know,&quot; you shrug. &quot;They got riled up over something after I left.&quot;
+
+The wolf looks at you with a skeptical gaze, and then notices your pocket. &quot;What do you-&quot;
+
+(text-style: &quot;bold&quot;) [&quot;Stop that!&quot;] a screeching voice cuts through the wind and bounces through the Yard. You and the wolf look - the snow leopard guard lies writhing and yowling on the ground, held in place by a cohort of hares! A ground squirrel wrenches the spear from her grip and searches wildly for (if: (history:) contains any of (a: &quot;\&quot;You mean a key like this?\&quot;&quot;, &quot;\&quot;I have a key too.\&quot;&quot;)) [you - and then spots you.] (else:) [the wolf - and then spots him.]
+
+&quot;There!&quot; he yells.
+
+Suddenly the guard lies forgotten on the ground and the group descends upon you and the wolf, desperate for the key.
+
+[[Time to go!]]</tw-passagedata><tw-passagedata pid="100" name="&quot;They know you&#39;re breaking out.&quot;" tags="" position="1411.6666666666667,1222.5" size="100,100">&quot;They know you&#39;re breaking out,&quot; you say.
+
+He stiffens, and you feel his full attention land on you. &quot;How?&quot; He asks in a low growl. 
+
+You don&#39;t have time to answer. (text-style: &quot;bold&quot;) [&quot;Stop that!&quot;] a screeching voice cuts through the wind and bounces through the Yard. You and the wolf look - the snow leopard guard lies writhing and yowling on the ground, held in place by a cohort of hares! A ground squirrel wrenches the spear from her grip and searches wildly for (if: (history:) contains any of (a: &quot;\&quot;You mean a key like this?\&quot;&quot;, &quot;\&quot;I have a key too.\&quot;&quot;)) [you - and then spots you.] (else:) [the wolf - and then spots him.]
+
+&quot;There!&quot; he yells.
+
+Suddenly the guard lies forgotten on the ground and the group descends upon you and the wolf, desperate for the key.
+
+[[Time to go!]]</tw-passagedata><tw-passagedata pid="101" name="&quot;I hear you&#39;re going to break out.&quot;" tags="" position="1728.3333333333335,1154.1666666666667" size="100,100">&quot;I hear you&#39;re breaking out,&quot; you say.
+
+He stiffens, and you feel his full attention land on you. &quot;How?&quot; He asks in a low growl. 
+
+You don&#39;t have time to answer. (text-style: &quot;bold&quot;) [&quot;Stop that!&quot;] a screeching voice cuts through the wind and bounces through the Yard. You and the wolf look - the snow leopard guard lies writhing and yowling on the ground, held in place by a cohort of hares! A ground squirrel wrenches the spear from her grip and searches wildly for (if: (history:) contains any of (a: &quot;\&quot;You mean a key like this?\&quot;&quot;, &quot;\&quot;I have a key too.\&quot;&quot;)) [you - and then spots you.] (else:) [the wolf - and then spots him.]
+
+&quot;There!&quot; he yells.
+
+Suddenly the guard lies forgotten on the ground and the group descends upon you and the wolf, desperate for the key.
+
+[[Time to go!]]</tw-passagedata><tw-passagedata pid="102" name="Politely introduce yourself" tags="" position="1638.3333333333333,1274.1666666666667" size="100,100">(if: (($held_form is &quot;Caia&quot;) OR ($held_form is &quot;Lepus&quot;)) AND ((history:) contains all of (a: &quot;Join the hares&quot;, &quot;Join the caribou&quot;))) [&quot;Hello,&quot; you dip your head in greeting. &quot;I&#39;m-&quot;
+
+&quot;Not to be rude, but you&#39;re a (if: $held_form is &quot;Caia&quot;) [//Caia//. If we were on the outside I might tolerate you, but not in here. Lea-&quot;] (else-if: $held_form is &quot;Lepus&quot;) [//Lepus//. If we were on the outside you would be din-&quot;]
+
+(text-style: &quot;bold&quot;) [&quot;Stop that!&quot;] a screeching voice cuts through the wind and bounces through the Yard. You and the wolf look - the snow leopard guard lies writhing and yowling on the ground, held in place by a cohort of hares! A ground squirrel wrenches the spear from her grip and searches wildly for (if: (history:) contains any of (a: &quot;\&quot;You mean a key like this?\&quot;&quot;, &quot;\&quot;I have a key too.\&quot;&quot;)) [you - and then spots you.] (else:) [the wolf - and then spots him.]
+
+&quot;There!&quot; he yells.
+
+Suddenly the guard lies forgotten on the ground and the group descends upon you and the wolf, desperate for the key.
+
+[[Time to go!]]
+] (else-if: ($held_form is &quot;Lepus&quot;) OR ($held_form is &quot;Caia&quot;)) [&quot;Hello,&quot; you dip your head in greeting. &quot;I&#39;m-&quot;
+
+&quot;Not to be rude, but you&#39;re a (if: $held_form is &quot;Lepus&quot;) [//Lepus//,&quot;] (else-if: $held_form is &quot;Caia&quot;) [//Caia//,&quot;] he leans in close, baring his teeth. (if: $held_form is &quot;Lepus&quot;) [&quot;If we were on the outside, you would be dinner. The only reason you&#39;re still standing here is because that isn&#39;t allowed in Kha&#39;bad.&quot;] (else-if: $held_form is &quot;Caia&quot;) [If we were on the outside I might tolerate you, but not in here.&quot;] He throws his chin up, motioning to the other shelters. &quot;Leave, go back to the common rabble.&quot;
+
+You sense he&#39;s done talking.
+
+\(unless: (history:) contains &quot;Join the caribou&quot;) [
+	[[Join the caribou]]\
+]
+\(if: (history:) contains &quot;Join the caribou&quot;) [
+	[[Rejoin the caribou-&gt;Join the caribou]]\
+]
+\(unless: (history:) contains &quot;Join the hares&quot;) [
+	[[Join the hares]]\
+] (if: (history:) contains &quot;Join the hares&quot;) [
+[[Rejoin the hares-&gt;Join the hares]]
+]
+\(if: $copperkey is 1 AND ((history:) contains &quot;\&quot;You mean a key like this?\&quot;&quot;)) [
+	[[Use your key to leave]]\
+]
+]</tw-passagedata><tw-passagedata pid="103" name="&quot;What did the other wolf give you?&quot;" tags="" position="1526.6666666666667,1260.8333333333333" size="100,100">(if: (($held_form is &quot;Caia&quot;) OR ($held_form is &quot;Lepus&quot;)) AND ((history:) contains all of (a: &quot;Join the hares&quot;, &quot;Join the caribou&quot;))) [&quot;What did the other wolf give you?&quot; you ask.
+
+The wolf growls and puts his hands in his pockets, obscuring the item from view. &quot;You&#39;re a (if: $held_form is &quot;Lepus&quot;) [//Lepus//. If we were on the outside you would be din-&quot;] (else-if: $held_form is &quot;Caia&quot;) [//Caia//. If we were on the outside I might tolerate you, but not in here. Lea-&quot;]
+
+(text-style: &quot;bold&quot;) [&quot;Stop that!&quot;] a screeching voice cuts through the wind and bounces through the Yard. You and the wolf look - the snow leopard guard lies writhing and yowling on the ground, held in place by a cohort of hares! A ground squirrel wrenches the spear from her grip and searches wildly for the {(if: (history:) contains any of (a: &quot;\&quot;You mean a key like this?\&quot;&quot;, &quot;\&quot;I have a key too.\&quot;&quot;)) [you - and then spots you.] (else:) [the wolf - and then spots him.]}
+
+&quot;There!&quot; he yells.
+
+Suddenly the guard lies forgotten on the ground and the group descends upon you and the wolf, desperate for the key.
+
+[[Time to go!]]
+] (else-if: ($held_form is &quot;Lepus&quot;) OR ($held_form is &quot;Caia&quot;)) [&quot;What did the other wolf give you?&quot; you ask. 
+
+The wolf growls and puts his hands in his pockets, obscuring the item from view. &quot;Not to be rude, but you&#39;re a (if: $held_form is &quot;Lepus&quot;) [//Lepus//,&quot;] (else-if: $held_form is &quot;Caia&quot;) [//Caia//,&quot;] he leans in close, baring his teeth. &quot;If we were on the outside, you would be dinner. The only reason you&#39;re still standing here is because that isn&#39;t allowed in Kha&#39;bad.&quot; He throws his chin up, motioning to the other shelters. &quot;Leave, go back to the common rabble.&quot;
+
+You sense he&#39;s done talking.
+
+\(unless: (history:) contains &quot;Join the caribou&quot;) [
+	[[Join the caribou]]\
+] 
+\(if: (history:) contains &quot;Join the caribou&quot;) [
+	[[Rejoin the caribou-&gt;Join the caribou]]\
+]
+\(unless: (history:) contains &quot;Join the hares&quot;) [
+	[[Join the hares]]\
+] 
+\(if: (history:) contains &quot;Join the hares&quot;) [
+	[[Rejoin the hares-&gt;Join the hares]]\
+]
+\(if: $copperkey is 1 AND ((history:) contains &quot;\&quot;You mean a key like this?\&quot;&quot;)) [
+	[[Use your key to leave]]\
+]
+]</tw-passagedata><tw-passagedata pid="104" name="&quot;You mean a key like this?&quot;" tags="" position="0,1589.6666666666663" size="100,100">&quot;Do you mean a key like this?&quot; you ask. You pull out the necklace you took from the woman in your cell.
+
+&quot;That&#39;s Cyrus&#39;s key!&quot; a ground squirrel yells. She tries to snatch it from you, but the twine catches on your fingers and keeps her from escaping with it. 
+
+The group stares at you hungrily as you slip the key into your pocket and back away. Behind them you see the snow leopard guard coming over, drawn by the commotion. 
+
+It wouldn&#39;t be wise to linger here long. 
+
+\(unless: (history:) contains &quot;Join the caribou&quot;) [
+	[[Join the caribou]]\
+] 
+\(if: (history:) contains &quot;Join the caribou&quot;) [
+	[[Rejoin the caribou-&gt;Join the caribou]]\
+]
+\(unless: (history:) contains &quot;Join the wolf&quot;) [
+	[[Join the wolf]]\
+]
+[[Use your key to leave]]</tw-passagedata><tw-passagedata pid="105" name="&quot;What&#39;s the plan?&quot;" tags="" position="120,1589.6666666666663" size="100,100">&quot;What&#39;s the plan?&quot; you ask, shimmying out of the hare&#39;s grip.
+
+&quot;Benba and Shiri will be distractions.&quot; He motions to a nervous, thin, twitchy hare and a small, confident ground squirrel. &quot;Everyone else will tackle him, and then I&#39;ll grab the key and we&#39;ll all run for the gate!&quot; The hare smiles confidently, but then pauses and looks at you. 
+
+&quot;But //you//. Cyrus doesn&#39;t know you yet...//you// might be the better distraction!&quot;
+
+[[&quot;I&#39;ll do it.&quot;]]
+[[&quot;Let Benba and Shiri do it.&quot;]]</tw-passagedata><tw-passagedata pid="106" name="&quot;I&#39;ll do it.&quot;" tags="" position="250,1662.9999999999995" size="100,100">You look around the group. Everyone looks cold and miserable, but a gleam of hope sparkles in their eyes as they watch you. (if: (history:) contains &quot;\&quot;This sounds like a terrible plan.\&quot;&quot; OR &quot;\&quot;What&#39;s the plan?\&quot;&quot;) [You shrug. &quot;I&#39;ll do it.&quot;] (else-if: (history:) contains &quot;\&quot;Who are we tackling?\&quot;&quot; OR &quot;Speak up&quot;) [&quot;Can I help?&quot; you offer.]
+
+The crowd almost breaks out into a cheer, but the lead hare shushes them. Once he&#39;s calmed them all, he speaks. (if: (history:) contains &quot;\&quot;This sounds like a terrible plan.\&quot;&quot; OR &quot;\&quot;What&#39;s the plan?\&quot;&quot;) [&quot;Alright! We need you to talk to Cyrus. Keep him distracted long enough for us to deal with the guards, and then we&#39;re outta here!&quot;] (else-if: (history:) contains &quot;\&quot;Who are we tackling?\&quot;&quot; OR &quot;Speak up&quot;) [&quot;Alright! Cyrus doesn&#39;t know you, so you can keep him talking long enough while we take care of the guards, and then we&#39;ll get the key and we&#39;re outta here!&quot;]
+
+[[Go talk to Cyrus-&gt;Join the wolf]]
+\(if: $copperkey is 1) [
+	[[&quot;What about this key?&quot;-&gt;&quot;You mean a key like this?&quot;]]\
+]
+</tw-passagedata><tw-passagedata pid="107" name="Use your key to leave" tags="" position="646.6666666666667,1596.333333333333" size="100,100">(if: (history:) contains any of (a: &quot;\&quot;I have a key too.\&quot;&quot;, &quot;\&quot;You mean a key like this?\&quot;&quot;)) [You turn and duck out of the shelter before the guard arrives.
+] (else:) [You leave the shelter and start across the Yard.
+]
+As you wade through the snow and bat snowflakes from your eyes, you notice the small wooden door at the edge of the Yard. Its paint is red and faded, and the wood is notched with deep claw marks, likely from previous escape attempts. 
+
+(if: $held_form is &quot;Caia&quot;) [Your form as a Caia enables you to move across the Yard without needing to stop for shelter or warmth, which allows you to have almost reached the gate] (else-if: $held_form is &quot;Holven&quot;) [Your form as a Holven causes you to move slowly and duck into shelters with other creatures to regain your warmth before moving on, which allows you have covered only a little bit of ground](else-if: $held_form is &quot;Lepus&quot;) [Your form as a Lepus allows you to move quickly atop the snow, but you have to duck into shelters with other creatures to regain your warmth before moving on, which allows you to have made it halfway to the gate] when the shrieking voice cuts through the wind and bounces across the Yard.
+
+(text-style: &quot;bold&quot;) [&quot;Stop that!&quot;] The snow leopard guard screeches and writhes on the ground, held in place by a cohort of hares! (if: not ((history:) contains any of (a: &quot;\&quot;You mean a key like this?\&quot;&quot;, &quot;\&quot;I have a key too.\&quot;&quot;))) [A ground squirrel wrenches the spear from her grip and calls out, &quot;Let&#39;s get him!&quot;
+
+A battle cry goes up as a group of ragged prisoners charge toward the black wolf, who races toward the gate. In the unfolding chaos, you don&#39;t have much time.] (else:) [A ground squirrel wrenches the spear from her grip and searches wildly for you - and then he spots you. 
+
+&quot;There!&quot; he yells.
+
+Suddenly the guard lies forgotten on the ground and the group descends upon you, desperate for the key.] 
+
+[[Time to go!]]</tw-passagedata><tw-passagedata pid="108" name="&quot;I have a key too.&quot;" tags="" position="473.3333333333333,1309.6666666666663" size="100,100">&quot;I have a key too,&quot; you say, pulling the key out of your pocket just enough for the group to see.
+
+&quot;That&#39;s Cyrus&#39;s key!&quot; a ground squirrel yells. She tries to snatch it from you, but the twine catches on your fingers and keeps her from escaping with it. 
+
+The group stares at you hungrily as you slip the key into your pocket and back away. Behind them you see the snow leopard guard coming over, drawn by the commotion. 
+
+It wouldn&#39;t be wise to linger here long. 
+
+[[Join the wolf]]
+[[Use your key to leave]]</tw-passagedata><tw-passagedata pid="109" name="Remain silent v3" tags="" position="350,1551.333333333333" size="100,100">You nod, but don&#39;t say anything. It&#39;s probably best to not let them know you have a key. 
+
+&quot;Look what you&#39;ve gone and done now!&quot; a hare complains, &quot;Now //everyone// is going to know we&#39;re trying to get out of here!&quot;
+
+&quot;Come on, we need to go somewhere //else// to discuss this,&quot; a hare mutters. He leads the apprehensive group away from the structure and into the howling winds of the Yard. 
+
+As soon as they emerge they hunch over and huddle together uncomfortably. They only walk a short distance before they stop and look at you with distrust, waiting for you to leave. 
+
+You look around. The guards seem on edge, disliking the ruckus caused by the hares and ground squirrels, and so too does the lone black wolf. He stands with his arms crossed and his eyes slowly sweeping the Yard. 
+
+[[Use your key to leave]] 
+[[Join the wolf]]</tw-passagedata><tw-passagedata pid="110" name="&quot;How do we get the key?&quot;" tags="" position="426.6666666666667,1431.333333333333" size="100,100">(if: $held_form is &quot;Caia&quot; AND ((history:) contains &quot;Caribou How Key&quot;)) [&quot;What&#39;s the plan to get the key?&quot; you ask.] (else:) [&quot;How do we get the key?&quot; you ask.]
+
+&quot;We were planning on tackling him and taking it!&quot; a hare pipes up enthusiastically, &quot;but //you// could talk to him!&quot;
+
+&quot;Yeah! You could talk to him and distract him!&quot; a ground squirrel joins in. 
+
+The group erupts in cheers of agreement and excitement, but the sound doesn&#39;t go unnoticed. The snow leopard guard glances toward you, then starts making her way toward the shelter. 
+
+(if: $held_form is &quot;Caia&quot; AND ((history:) contains &quot;Caribou How Key&quot;)) [You back away from the shelter and turn your attention elsewhere, eager to get away from the hopeless group.] (else:) [Armed with new knowledge, you back away. It wouldn&#39;t be wise to linger long.] 
+
+\(unless: (history:) contains &quot;Join the caribou&quot;)[
+	[[Join the caribou]]\
+]
+\(unless: (history:) contains &quot;Join the wolf&quot;) [
+	[[Join the wolf]]\
+]</tw-passagedata><tw-passagedata pid="111" name="&quot;Who are we tackling?&quot;" tags="" position="228.33333333333331,1477.9999999999995" size="100,100">&quot;Who are we tackling?&quot; you ask. 
+
+The group turns toward you, startled. It&#39;s possible they never noticed your arrival.
+
+The lead hare walks forward and slings his arm over your shoulder. In a low voice he says, &quot;We&#39;re getting Cyrus&#39; key and escaping. See that Holven over there - the black one? His pack is breaking him out, but we&#39;re not going to let that happen. //We&#39;re// going to be the ones breaking out today.&quot;
+
+[[&quot;This sounds like a terrible plan.&quot;]]
+[[&quot;Can I help?&quot;-&gt;&quot;I&#39;ll do it.&quot;]]
+\(if: $copperkey is 1) [
+	[[&quot;You mean a key like this?&quot;]]\
+]</tw-passagedata><tw-passagedata pid="112" name="&quot;Let Benba and Shiri do it.&quot;" tags="" position="120,1739.6666666666663" size="100,100">&quot;Let Benba and Shiri do it.&quot; You take a step back. You aren&#39;t sure if you want to be getting involved in this. 
+
+(if: (history:) contains &quot;\&quot;Benba and Shiri won&#39;t ever make it.\&quot;&quot;) [&quot;But...didn&#39;t you just say they won&#39;t make it?&quot; The hare cocks his head.
+
+&quot;They won&#39;t make it like //that//,&quot; you clarify. &quot;Maybe have a few more people as distractions.&quot;
+
+] &quot;Hmm...&quot; the lead hare taps his foot anxiously. &quot;New plan!&quot; He suddenly says, and quickly the group surrounds him once more. You get jostled to the edge of the structure, left standing with the howling wind ruffling your fur through the holes of your prison garb. 
+
+You turn and look out into the Yard, eager to get away from the group and its lost cause. The caribou and fox stand huddled beneath their structure, while the wolf shifts anxiously beyond them.
+
+\(unless: (history:) contains &quot;Join the wolf&quot;) [
+	[[Join the wolf]]\
+] 
+\(if: (history:) contains &quot;Join the wolf&quot;) [
+	[[Rejoin the wolf-&gt;Join the wolf]]\
+]
+\(unless: (history:) contains &quot;Join the caribou&quot;) [
+	[[Join the caribou]]\
+] 
+\(if: (history:) contains &quot;Join the caribou&quot;) [
+	[[Rejoin the caribou-&gt;Join the caribou]]\
+]</tw-passagedata><tw-passagedata pid="113" name="&quot;This sounds like a terrible plan.&quot;" tags="" position="373.3333333333333,1711.3333333333328" size="100,100">&quot;This sounds like a terrible plan,&quot; you say.
+
+A few of the hares mumble in agreement while the ground squirrels and the lead hare look hurt. 
+
+&quot;What&#39;s so bad about our plan, eh?&quot; someone asks from the back of the group.
+
+[[&quot;Benba and Shiri won&#39;t ever make it.&quot;]]
+[[&quot;None of you will make it.&quot;]]
+[[&quot;You need more theatrics.&quot;]]</tw-passagedata><tw-passagedata pid="114" name="&quot;Benba and Shiri won&#39;t ever make it.&quot;" tags="" position="251.66666666666666,1814.666666666666" size="100,100">&quot;Benba and Shiri won&#39;t ever make it,&quot; you shake your head. &quot;They won&#39;t ever make it to the gate.&quot;
+
+The lead hare looks down, deep in thought. &quot;That&#39;s right..&quot; he mutters. &quot;No, we need a distraction //for// our distraction...&quot;
+
+He smiles at you expectantly. 
+
+[[&quot;I&#39;ll do it.&quot;]]
+[[&quot;Let Benba and Shiri do it.&quot;]]</tw-passagedata><tw-passagedata pid="115" name="&quot;None of you will make it.&quot;" tags="" position="381.66666666666663,1839.666666666666" size="100,100">&quot;None of you will make it,&quot; you shake your head. &quot;The guards will be on you before you ever make it to the gate.&quot;
+
+The lead hare looks down, deep in thought. &quot;That&#39;s right..&quot; he mutters. &quot;No, we need a distraction //for// our distraction...&quot;
+
+He smiles at you expectantly. 
+
+[[&quot;I&#39;ll do it.&quot;]]
+[[&quot;Let Benba and Shiri do it.&quot;]]</tw-passagedata><tw-passagedata pid="116" name="&quot;You need more theatrics.&quot;" tags="" position="496.6666666666666,1766.3333333333328" size="100,100">&quot;You need more theatrics,&quot; you say. &quot;It&#39;s too obvious.&quot;
+
+The lead hare looks down, deep in thought. &quot;That&#39;s right..&quot; he mutters. &quot;No, we need a distraction //for// our distraction...&quot;
+
+He smiles at you expectantly. 
+
+[[&quot;I&#39;ll do it.&quot;]]
+[[&quot;Let Benba and Shiri do it.&quot;]]</tw-passagedata><tw-passagedata pid="117" name="&quot;How far can my status get me?&quot;" tags="" position="1820.0000000000005,1019.0000000000006" size="100,100">&quot;How far can my status get me?&quot;
+
+Cyrus looks you over for a moment, teeth exposed in a grin. &quot;Where your status couldn&#39;t get you, your confidence could.&quot; He shakes his head (if: (history:) contains &quot;\&quot;What did the other Holven give you?\&quot;&quot;) [and pulls his right hand partially from his pocket, revealing the top of a shiny copper key.] (else:) [and puts his right hand in his pocket, pulling a shiny copper key just high enough for you to see.] &quot;If you ever get out of here, go to Sypha&#39;s Cavern. My family would be very interested in meeting you. We-&quot;
+
+(text-style: &quot;bold&quot;) [&quot;Stop that!&quot;] A clear voice cuts through the whipping winds and bounces across the Yard. You look: the ground squirrels have pinned the snow leopard guard to the ground! 
+
+&quot;What-&quot; Cyrus growls. He takes a step back, and then turns and runs. A few moments later a group of hares charges past, the guard&#39;s spear in hand. 
+
+Chaos slowly breaks out across the Yard: Guards subdue unruly prisoners, ground squirrels and hares tackle Holven they mistake for Cyrus, and the gate on the far end of the Yard swings open!
+
+[[Escape while you can!]]
+(set: $QuestforSyphasCavern_1 to true)</tw-passagedata><tw-passagedata pid="118" name="Move to the cliff" tags="" position="701.6666666666665,2026.333333333333" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="119" name="Move to the trees" tags="" position="856.6666666666665,2031.333333333333" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="120" name="Follow the tracks" tags="" position="998.3333333333331,2012.9999999999998" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="121" name="&quot;Why can&#39;t you remember?&quot;" tags="" position="1141.6666666666665,1225.8333333333333" size="100,100">&quot;Why can&#39;t you remember?&quot; As soon as you&#39;ve spoken, the fox sighs. 
+
+&quot;I...can&#39;t remember,&quot; the caribou says pleasantly.
+
+[[&quot;How long have you been in here?&quot;]]</tw-passagedata><tw-passagedata pid="122" name="&quot;How long have you been in here?&quot;" tags="" position="1138.3333333333335,1355.8333333333333" size="100,100">{(if: (history:) contains &quot;\&quot;Why can&#39;t you remember?\&quot;&quot;) [You shift your attention to the fox.] &quot;How long have you been in here?&quot; (else:) [you ask with wide eyes.]}
+
+The fox looks up with dead eyes glossed by hopelessness. &quot;I can&#39;t right tell you, honestly. I //feel// like it&#39;s only been a few months, but my fur speaks a different story.&quot; He turns his shaky palm over, studying the silvery hair. &quot;Would you believe I was a young&#39;un when I first came in? Just like Yenva here.&quot;
+
+The fox grows silent, then hobbles over to you. Yenva tries to help the fox, but the old creature waves him away. The fox motions for you to stoop down so he can whisper in your ear. &quot;Get out of here, before they destroy your mind like they have his.&quot;
+
+[[&quot;How can I get out?&quot;]]
+[[&quot;Come with me.&quot;]]</tw-passagedata><tw-passagedata pid="123" name="&quot;How can I get out?&quot;" tags="" position="1253.3333333333335,1445.8333333333333" size="100,100">&quot;How can I get out?&quot; 
+
+The fox chuckles and hobbles back to Yenva. The caribou seems happy to assist him. &quot;That&#39;s Cyrus over there; the wolf, you see? His Pack is breaking him out. Someone slipped him a key.&quot; The fox is careful to avoid looking at the solitary black wolf. &quot;His key might as well be your only way out, unless you get on the Chain.&quot;
+
+\(if: $copperkey is 1 AND ((history:) contains &quot;\&quot;You mean a key like this?\&quot;&quot;)) [
+	[[&quot;I have a key like that.&quot;]]
+	[[Thank him for the information]]\
+] 
+\(else-if: $copperkey is 1) [
+	[[&quot;You mean a key like this?&quot;-&gt;Caribou Key]]\
+] 
+\(else-if: ((history:) contains &quot;Join the hares&quot;) AND $copperkey is 1) [
+	[[Thank him for the information]]\
+] 
+(else:) [
+	[[&quot;How can I get the key?&quot;-&gt;Caribou How Key]]\
+]
+[[&quot;What&#39;s the Chain?&quot;]]</tw-passagedata><tw-passagedata pid="124" name="&quot;Come with me.&quot;" tags="" position="1273.3333333333335,1292.4999999999998" size="100,100">&quot;Come with me,&quot; you say. 
+
+The fox chuckles and shakes his head. &quot;I appreciate it, but I&#39;m old now. I can barely make the walk from my cell to the Yard. The cold would kill me before I made it past the wall.&quot; (unless: (history:) contains &quot;\&quot;What happened to your leg?\&quot;&quot;) [He gives you a sad smile, baring what few yellow teeth he has left.]
+
+[[&quot;How can I get out?&quot;]]
+(set: $selfless to it +1)</tw-passagedata><tw-passagedata pid="125" name="&quot;What happened to your leg?&quot;" tags="" position="1058.3333333333335,1462.5" size="100,100">&quot;What happened to your leg?&quot; you ask.
+
+The fox lowers his gaze and pulls his leg closer. &quot;Nothin.&quot;
+
+&quot;Yenva! You know it isn&#39;t nothing!&quot; The caribou pats the fox&#39;s shoulder, almost knocking him off balance. &quot;It was the...&quot; he trails off, suddenly puzzled. 
+
+The fox pulls his lips back in a snarl, revealing most of his yellow teeth are missing. &quot;My name isn&#39;t Yenva. That&#39;s //your// name. And it //was// nothing.&quot; The fox keeps his eyes lowered, obviously uncomfortable talking about his injury. 
+
+\(unless: (history:) contains &quot;Look at the caribou&quot;) [
+	[[Look at the caribou]]\
+]
+\(unless: (history:) contains &quot;\&quot;Why is it rare?\&quot;&quot;) [
+	[[&quot;Why is it rare to see other Caia?&quot;]]\
+]</tw-passagedata><tw-passagedata pid="126" name="&quot;What happened to your antlers?&quot;" tags="" position="940.0000000000001,1527.5" size="100,100">&quot;What happened to your antlers?&quot; you ask.
+
+&quot;Oh! I-&quot; the caribou starts, but the fox holds up a shaky hand. &quot;Yenva here likes to make friends. You don&#39;t make friends in Kha&#39;bad,&quot; the fox grumbles. &quot;If I hear him tell that story one more time I&#39;m going to rip what&#39;s left of his antlers off and throw &#39;em to the Wild Beasts.&quot; 
+
+The caribou looks momentarily hurt, but quickly smiles once more.
+
+\(unless: (history:) contains &quot;Look at the fox&quot;) [
+[[Look at the fox]]\
+]
+\(unless: (history:) contains &quot;\&quot;Why is it rare?\&quot;&quot;) [
+[[&quot;Why is it rare to see other Caia?&quot;]]\
+]</tw-passagedata><tw-passagedata pid="127" name="&quot;I have a key like that.&quot;" tags="" position="953.3333333333335,1637.5" size="100,100">&quot;I have a key like that,&quot; you say hesitantly.
+
+The fox&#39;s eyes light up, but you nod toward the group of hares and ground squirrels, now being interrogated by the snow leopard. The fox grimaces. &quot;They know you have a key?&quot;
+
+You nod in response.
+
+The fox fidgets and surveys the guards spaced around the Yard; they seem to be watching the hares and ground squirrels with interest. &quot;I won&#39;t question how you came about that key, but you best be leaving before the hares rat you out. They&#39;re a restless bunch.&quot;
+
+You thank the fox for the information and duck out of the shelter. The guards seem on edge, and the hares enthusiastically motion to you.
+
+[[Use your key to leave]]</tw-passagedata><tw-passagedata pid="128" name="Thank him for the information" tags="" position="1153.3333333333335,1592.5" size="100,100">You glance at the guard interrogating the hares and ground squirrels and decide it&#39;s better to keep quiet about your key. 
+
+You nod in thanks to the fox and duck out of the shelter, considering your next move. 
+
+The guards seem on edge, disliking the ruckus caused by the hares and ground squirrels, and so too does the lone black wolf. He stands with his arms crossed and his eyes slowly sweeping the Yard. 
+
+[[Join the wolf]]
+[[Use your key to leave]]</tw-passagedata><tw-passagedata pid="129" name="Caribou Key" tags="" position="1281.6666666666667,1587.5" size="100,100">&quot;Do you mean a key like this?&quot; you ask. You pull out the necklace you took from the woman in your cell.
+
+&quot;May I?&quot; the fox asks.
+
+[[Let him examine the key]]
+[[Keep it]]</tw-passagedata><tw-passagedata pid="130" name="Caribou How Key" tags="" position="1408.3333333333335,1544.1666666666665" size="100,100">(if: (history:) contains all of (a: &quot;Remain silent Yard style&quot;, &quot;Join the wolf&quot;)) [You start to nod in thanks, but a loud commotion stops you. 
+
+(text-style: &quot;bold&quot;) [&quot;Stop that!&quot;] a screeching voice cuts through the wind and bounces through the Yard. You, the caribou, and fox all look - the snow leopard guard lies writhing and yowling on the ground, held in place by a cohort of hares! A ground squirrel wrenches the spear from her grip and searches wildly for (if: (history:) contains any of (a: &quot;\&quot;You mean a key like this?\&quot;&quot;, &quot;\&quot;I have a key too.\&quot;&quot;)) [you - and then spots you.] (else:) [the wolf - and then spots him.]
+
+&quot;There!&quot; he yells.
+
+Suddenly the guard lies forgotten on the ground and the group descends upon (if: (history:) contains any of (a: &quot;\&quot;You mean a key like this?\&quot;&quot;, &quot;\&quot;I have a key too.\&quot;&quot;)) [you,] (else:) [the wolf,] desperate for the key.
+
+The fox grabs your arm. &quot;Go, while you can!&quot;
+
+[[Time to go!]]
+] (else:) [{(if: (history:) contains &quot;\&quot;How do we get the key?\&quot;&quot;) [&quot;How can I get the key? I asked them, but they weren&#39;t much help,&quot; you say, motioning to the chattering group of hares and ground squirrels, now being interrogated by the guard.] (else:) [&quot;How do we get the key?&quot; you ask.]}
+
+The fox chuckles. &quot;While I can&#39;t say my memory is //great//, I do know Cyrus only talks to other Holven. We&#39;re below his status, you see. But you and Yenva...&quot; The fox looks between you and the other caribou. &quot;You two might have a chance. On the outside, his kind mingles with yours. If you&#39;re smooth enough, he might talk to you.&quot;
+
+You nod in thanks to the fox and duck out of the shelter, considering your next move. 
+
+\(unless: (history:) contains &quot;Join the hares&quot;) [
+	[[Join the hares]]\
+] (unless: (history:) contains &quot;Join the wolf&quot;) [
+	[[Join the wolf]]\
+]
+]</tw-passagedata><tw-passagedata pid="131" name="&quot;What&#39;s the Chain?&quot;" tags="" position="1408.3333333333335,1419.1666666666665" size="100,100">&quot;What&#39;s the Chain?&quot;
+
+&quot;Don&#39;t...get put on the Chain. Don&#39;t...&quot; Yenva&#39;s eyes dialate suddenly, and he tightens his grip on the fox&#39;s shoulder. 
+
+You both look at him for a moment. &quot;Did you just remember something, Yenva?&quot; the fox asks. 
+
+&quot;My antlers....Don&#39;t....Don&#39;t...&quot; Yenva creeps his free hand up to his antlers and gently caresses what&#39;s left. The fox shimmies out of Yenva&#39;s grip and shakes his head. &quot;Pay him no mind - he always forgets in the end. The Chain isn&#39;t an option, I guess.&quot;
+
+\(if: $copperkey is 1) [
+	[[&quot;You mean a key like this?&quot;-&gt;Caribou Key]]\
+] 
+\(if: (history:) contains all of (a: &quot;Join the hares&quot;, &quot;\&quot;You mean a key like this?\&quot;&quot;)) [
+	[[Thank him for the information]]\
+] 
+\(else:) [
+	[[&quot;How can I get the key?&quot;-&gt;Caribou How Key]]\
+]</tw-passagedata><tw-passagedata pid="132" name="Let him examine the key" tags="" position="1270,1705.8333333333333" size="100,100">You allow the fox to take the key from your hand. He&#39;s old - even if he did try to run off with it, his bum leg wouldn&#39;t let him get very far. 
+
+He holds it carefully and examines it as a jeweler would examine a diamond. After a few moments he hands it back. &quot;I can&#39;t say for sure, but it looks like it might belong to a lock here.&quot; He glances quickly at the lone wolf and his fur bristles a bit. &quot;If I were you, I&#39;d try that key on the old gate over there. Worst that could happen is getting locked up here, but it seems that&#39;s already in your cards.&quot;
+
+(if: ((history:) contains all of (a: &quot;Join the hares&quot;, &quot;Join the wolf&quot;))) [You start to nod in thanks, but a loud commotion stops you. 
+
+(text-style: &quot;bold&quot;) [&quot;Stop that!&quot;] a screeching voice cuts through the wind and bounces through the Yard. You, the caribou, and fox all look - the snow leopard guard lies writhing and yowling on the ground, held in place by a cohort of hares! A ground squirrel wrenches the spear from her grip and searches wildly for (if: (history:) contains &quot;\&quot;You mean a key like this?\&quot;&quot;) [you - and then he spots you.] (else:) [the wolf - and then spots him.]
+
+&quot;There!&quot; he yells.
+
+Suddenly the guard lies forgotten on the ground and the group descends upon (if: (history:) contains &quot;\&quot;You mean a key like this?\&quot;&quot;) [you,] (else:) [the wolf,] desperate for the key.
+
+[[Time to go!]]
+] (else:) [You nod in thanks to the fox and duck out of the shelter, considering your next move. 
+
+\(unless: (history:) contains &quot;Join the wolf&quot;) [
+	[[Join the wolf]]\
+]
+\(if: (history:) contains &quot;Join the hares&quot;) [
+	[[Rejoin the hares-&gt;Join the hares]]\
+] 
+\(else:) [
+	[[Join the hares]]\
+]
+[[Use your key to leave]]
+]</tw-passagedata><tw-passagedata pid="133" name="Keep it" tags="" position="1401.6666666666667,1667.5" size="100,100">You keep a tight grip on the key and pull it back. &quot;You can see it from here,&quot; you say. 
+
+The fox grumbles and takes a step closer, examining the key between your fingers. After a few moments, he moves away. &quot;I can&#39;t say for sure, but it looks like it might belong to a lock here.&quot; He glances quickly at the lone wolf and his fur bristles a bit. &quot;If I were you, I&#39;d try that key on the old gate over there. Worst that could happen is getting locked up here, but it seems that&#39;s already in your cards.&quot;
+
+(if: ((history:) contains all of (a: &quot;Join the hares&quot;, &quot;Join the wolf&quot;,))) [You start to nod in thanks, but a loud commotion stops you. 
+
+(text-style: &quot;bold&quot;) [&quot;Stop that!&quot;] a screeching voice cuts through the wind and bounces through the Yard. You, the caribou, and fox all look - the snow leopard guard lies writhing and yowling on the ground, held in place by a cohort of hares! A ground squirrel wrenches the spear from her grip and searches wildly for (if: (history:) contains &quot;\&quot;You mean a key like this?\&quot;&quot;) [you - and then spots you.] (else:) [the wolf - and then spots him.]
+
+&quot;There!&quot; he yells.
+
+Suddenly the guard lies forgotten on the ground and the group descends upon (if: (history:) contains &quot;\&quot;You mean a key like this?\&quot;&quot;) [you,] (else:) [the wolf,] desperate for the key.
+
+
+[[Time to go!]]
+] (else:) [You nod in thanks to the fox and duck out of the shelter, considering your next move. 
+
+\(unless: (history:) contains &quot;Join the wolf&quot;) [
+	[[Join the wolf]]\
+]
+\(if: (history:) contains &quot;Join the hares&quot;) [
+	[[Rejoin the hares-&gt;Join the hares]]\
+] 
+\(else:) [
+	[[Join the hares]]\
+]
+[[Use your key to leave]]
+]
+(set: $self_preservation to it +1)</tw-passagedata></tw-storydata>
 
 <script title="Twine engine code" data-main="harlowe">"use strict";function _defineProperty(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}var _slicedToArray=function(){function e(e,t){var n=[],r=!0,i=!1,o=void 0;try{for(var a,s=e[Symbol.iterator]();!(r=(a=s.next()).done)&&(n.push(a.value),!t||n.length!==t);r=!0);}catch(e){i=!0,o=e}finally{try{!r&&s.return&&s.return()}finally{if(i)throw o}}return n}return function(t,n){if(Array.isArray(t))return t;if(Symbol.iterator in Object(t))return e(t,n);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};!function(){/**
  * @license almond 0.3.3 Copyright jQuery Foundation and other contributors.
